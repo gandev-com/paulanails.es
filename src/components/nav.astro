@@ -1,0 +1,403 @@
+---
+interface NavItem {
+  label: string;
+  href: string;
+  icon: string;
+}
+
+const navItems: NavItem[] = [
+  {
+    label: "Inicio",
+    href: "#home",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"></path></svg>`,
+  },
+  {
+    label: "Servicios",
+    href: "#projects",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5Z"></path></svg>`,
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"></path></svg>`,
+  },
+  {
+    label: "Curriculum",
+    href: "#cv",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"></path></svg>`,
+  },
+];
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border-gray-100 background-nav-bar py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg"
+>
+  <div
+    class="fixed top-0 left-0 background-color text-white w-56 h-screen overflow-y-auto transition-transform transform -translate-x-full ease-in-out duration-300 md:hidden z-50 -mt-px -ml-px"
+    id="sidebar"
+  >
+    <!-- Your Sidebar Content -->
+    <div class="p-4 pt-4">
+      <ul class="mt-4">
+        <li class="mb-2">
+          {
+            navItems.map((item) => (
+              <a
+                class="relative block rounded-lg  py-1.5 text-md font-medium text-white transition-all duration-200 hover:text-teal-400"
+                href={item.href}
+                aria-label={item.label}
+              >
+                <span class="nav-indicator absolute left-1/2 top-1/2 -z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-blue-600 opacity-0 transition-all duration-200" />
+                {/* <span class="flex items-center gap-2" set:html={item.icon} /> */}
+                <span class="ml-1">{item.label}</span>
+              </a>
+            ))
+          }
+          <div class="flex justify-start gap-2 pt-3 md:pt-6">
+            <a
+              target="_blank"
+              href="https://github.com/Gan-dev"
+              aria-label="GitHub"
+              class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/gustavo-cevallos-web-developer/"
+              aria-label="LinkedIn"
+              class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              target="_blank"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=gandev.com@gmail.com&su=Hey%20Gustavo!"
+              aria-label="Email"
+              class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="px-4">
+    <div class="flex items-center justify-between">
+      <div class="flex shrink-0"></div>
+      <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
+        {
+          navItems.map((item) => (
+            <a
+              class="relative inline-block rounded-lg px-2 py-1 text-md font-medium text-white transition-all duration-200  hover:text-teal-400"
+              href={item.href}
+              aria-label={item.label}
+            >
+              <span class="nav-indicator absolute left-1/2 top-1/2 -z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-blue-600 opacity-0 transition-all duration-200" />
+              <span class="ml-1">{item.label}</span>
+            </a>
+          ))
+        }
+      </div>
+      <div class="flex items-center justify-end gap-3">
+        <button class="background-icon md:hidden" id="open-sidebar">
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  nav {
+    transform: translateX(-50%);
+    background-color: var(--background);
+    transition:
+      background-color 0.3s ease,
+      border-radius 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  nav.scrolling {
+    background-color: var(--component-bg);
+    border-color: #ffffff10;
+    border-radius: 9999px;
+  }
+
+  nav a.active .nav-indicator {
+    transform: translateY(-50%) scale(0.8);
+    opacity: 1;
+  }
+
+  nav a.active {
+    color: white !important;
+  }
+
+  @media (max-width: 767px) {
+    nav {
+      width: 100% !important;
+      transform: translateX(-50%);
+      bottom: 0;
+      left: 50%;
+      position: fixed;
+      border-radius: 1rem 1rem 0 0;
+      background-color: transparent;
+    }
+
+    nav.scrolling {
+      border-radius: 1rem 1rem 0 0;
+      background-color: var(--component-bg);
+    }
+
+    body {
+      padding-bottom: 70px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    nav {
+      width: 80% !important;
+    }
+    .background-nav-bar {
+      background-color: var(--component-bg / 0.85);
+      opacity: 0.95;
+    }
+  }
+  .background-color {
+    background-color: var(--component-bg);
+    opacity: 0.95;
+  }
+
+  .background-icon {
+    color: white;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  .background-icon::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    background: var(--sec);
+    opacity: 0;
+    border-radius: 50%;
+    transform: scale(0.8);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  /* Solo hover cuando NO está activo */
+  .background-icon:not(.active):hover {
+    color: white;
+    transform: scale(0.9);
+  }
+
+  .background-icon:not(.active):hover::before {
+    transform: scale(0.9);
+  }
+
+  /* Estado activo (sidebar abierto) */
+  .background-icon.active {
+    color: var(--sec);
+    transform: scale(0.9) rotate(90deg);
+  }
+
+  .background-icon.active::before {
+    opacity: 0.1;
+    transform: scale(1);
+    animation: pulseIcon 0.6s ease-out;
+  }
+
+  @keyframes pulseIcon {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.15;
+    }
+    100% {
+      transform: scale(0.97815L12);
+      opacity: 0.1;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.getElementById("main-nav");
+  const maxScroll = 1000;
+  let rafId: number | null = null;
+
+  function updateNav() {
+    if (window.scrollY > 0) {
+      nav?.classList.add("scrolling");
+
+      const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
+      const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
+
+      const minWidth = 528;
+      const maxWidth = window.innerWidth * 0.8;
+      const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
+
+      if (window.innerWidth >= 768) {
+        nav?.style.setProperty("width", `${currentWidth}px`);
+      }
+    } else {
+      nav?.classList.remove("scrolling");
+      nav?.style.setProperty("width", "80%");
+    }
+    rafId = null;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateNav);
+      }
+    },
+    { passive: true }
+  );
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = e.currentTarget as HTMLAnchorElement;
+      const targetId = target.getAttribute("href")?.substring(1) || "";
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a[href^='#']");
+    const observerOptions = { threshold: 0.6 };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const id = entry.target.getAttribute("id");
+          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add("active");
+          }
+        }
+      });
+    };
+    const sidebar = document.getElementById("sidebar");
+    const openSidebarButton = document.getElementById("open-sidebar");
+
+    openSidebarButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      const isOpen = !sidebar.classList.contains("-translate-x-full");
+
+      if (isOpen) {
+        // Cerrar el sidebar
+        sidebar.classList.add("-translate-x-full");
+        openSidebarButton.classList.remove("active");
+        console.log(
+          "Cerrando sidebar - Active removido:",
+          !openSidebarButton.classList.contains("active")
+        );
+      } else {
+        // Abrir el sidebar
+        sidebar.classList.remove("-translate-x-full");
+        openSidebarButton.classList.add("active");
+        console.log(
+          "Abriendo sidebar - Active añadido:",
+          openSidebarButton.classList.contains("active")
+        );
+      }
+
+      // Forzar blur para quitar el hover
+      openSidebarButton.blur();
+    });
+
+    // Close the sidebar when clicking outside of it
+    document.addEventListener("click", (e) => {
+      if (
+        !sidebar.contains(e.target as Node) &&
+        !openSidebarButton.contains(e.target as Node)
+      ) {
+        sidebar.classList.add("-translate-x-full");
+        openSidebarButton.classList.remove("active");
+      }
+    });
+
+    // Close sidebar when clicking on a link inside it
+    const sidebarLinks = sidebar.querySelectorAll("a");
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        openSidebarButton.classList.remove("active");
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+    sections.forEach((section) => observer.observe(section));
+  });
+</script>
+
+<style>
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 70px;
+    }
+  }
+
+  nav a.active {
+    color: white !important;
+  }
+</style>
