@@ -1,0 +1,213 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Bento Cakes - Master the Art">
+  <div class="min-h-screen bg-bento-bg py-8 md:py-12 lg:py-16">
+    <!-- Main Bento Card -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="bg-bento-card rounded-[32px] shadow-2xl shadow-pink-200/50 p-6 md:p-10 lg:p-12"
+      >
+        <!-- Header -->
+        <header
+          class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 md:mb-12"
+        >
+          <!-- Logo -->
+          <div
+            class="w-12 h-12 rounded-full bg-bento-pink-medium flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src="/logo-web.png"
+              alt="Logo"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Navigation Pills -->
+          <nav class="flex flex-wrap items-center justify-center gap-3">
+            <button
+              class="px-6 py-2.5 bg-bento-pink-light rounded-full text-bento-pink-darker font-medium text-sm hover:bg-bento-pink hover:text-[var(--hover-text-color)] transition-colors"
+            >
+              Home
+            </button>
+            <button
+              class="px-6 py-2.5 bg-bento-pink-light rounded-full text-bento-pink-darker font-medium text-sm hover:bg-bento-pink hover:text-[var(--hover-text-color)] transition-colors"
+            >
+              Courses
+            </button>
+            <button
+              class="px-6 py-2.5 bg-bento-pink-light rounded-full text-bento-pink-darker font-medium text-sm hover:bg-bento-pink hover:text-[var(--hover-text-color)] transition-colors"
+            >
+              About
+            </button>
+            <button
+              class="px-6 py-2.5 bg-bento-pink-light rounded-full text-bento-pink-darker font-medium text-sm hover:bg-bento-pink hover:text-[var(--hover-text-color)] transition-colors"
+            >
+              Contact
+            </button>
+          </nav>
+
+          <div class="w-12 sm:block hidden"></div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="mb-12 md:mb-16">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-8">
+            <!-- Left Column - Title -->
+            <div class="flex items-center">
+              <h1
+                class="font-serif text-4xl md:text-5xl lg:text-6xl text-bento-pink-darker leading-tight"
+              >
+                Master the art of Bento Cakes in London
+              </h1>
+            </div>
+
+            <!-- Right Column - Image Placeholder -->
+            <div
+              class="bg-gradient-to-br from-bento-pink-medium to-bento-pink-dark rounded-[28px] h-64 md:h-80 lg:h-full min-h-[300px] shadow-lg"
+            >
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="mb-8">
+            <div class="bg-bento-pink-light rounded-[24px] p-6 md:p-8">
+              <p
+                class="text-bento-pink-darker text-base md:text-lg leading-relaxed"
+              >
+                Join our exclusive workshops and learn from the best pastry
+                chefs in London. Create stunning mini cakes that are perfect for
+                any celebration. From beginners to advanced techniques, we'll
+                guide you every step of the way.
+              </p>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-end">
+            <button
+              class="px-8 py-4 bg-bento-pink-dark rounded-full text-white font-semibold text-base hover:bg-bento-pink-darker transition-all hover:shadow-lg transform hover:-translate-y-0.5"
+            >
+              Book Your Class
+            </button>
+            <button
+              class="px-8 py-4 bg-bento-pink-light rounded-full text-bento-pink-darker font-semibold text-base hover:bg-bento-pink transition-colors"
+            >
+              Learn More
+            </button>
+          </div>
+        </section>
+
+        <!-- Meet Your Sweet Mentors Section -->
+        <section class="grid lg:grid-cols-3 gap-6 md:gap-8">
+          <!-- Left Panel - Main Mentors Section -->
+          <div class="lg:col-span-2 space-y-6">
+            <!-- Title and Description -->
+            <div
+              class="bg-gradient-to-br from-bento-pink-medium to-bento-pink rounded-[24px] p-8 md:p-10"
+            >
+              <h2 class="font-serif text-3xl md:text-4xl text-white mb-4">
+                Meet your sweet mentors
+              </h2>
+              <p class="text-white/90 text-base md:text-lg leading-relaxed">
+                Our expert pastry chefs bring years of experience and passion to
+                every class. They'll share their secrets and help you create
+                beautiful, delicious bento cakes.
+              </p>
+            </div>
+
+            <!-- Mentors Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+              <!-- Mentor Card 1 -->
+              <div
+                class="bg-bento-pink-light rounded-[20px] p-6 hover:bg-bento-pink transition-colors"
+              >
+                <div class="bg-bento-pink rounded-[16px] h-32 mb-4"></div>
+                <p class="text-bento-pink-darker font-medium text-center">
+                  Sarah Chen
+                </p>
+                <p class="text-bento-pink-darker/70 text-sm text-center">
+                  Head Pastry Chef
+                </p>
+              </div>
+
+              <!-- Mentor Card 2 -->
+              <div
+                class="bg-bento-pink-light rounded-[20px] p-6 hover:bg-bento-pink transition-colors"
+              >
+                <div class="bg-bento-pink rounded-[16px] h-32 mb-4"></div>
+                <p class="text-bento-pink-darker font-medium text-center">
+                  Emma Wilson
+                </p>
+                <p class="text-bento-pink-darker/70 text-sm text-center">
+                  Creative Director
+                </p>
+              </div>
+
+              <!-- Mentor Card 3 -->
+              <div
+                class="bg-bento-pink-light rounded-[20px] p-6 hover:bg-bento-pink transition-colors"
+              >
+                <div class="bg-bento-pink rounded-[16px] h-32 mb-4"></div>
+                <p class="text-bento-pink-darker font-medium text-center">
+                  Lisa Park
+                </p>
+                <p class="text-bento-pink-darker/70 text-sm text-center">
+                  Senior Instructor
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel - Featured Mentor + Info Cards -->
+          <div class="space-y-6">
+            <!-- Kristina Card -->
+            <div class="bg-bento-pink-dark rounded-[24px] p-6">
+              <div class="flex items-start gap-4 mb-6">
+                <div class="w-16 h-16 rounded-full bg-white/20 flex-shrink-0">
+                </div>
+                <div>
+                  <h3 class="text-white font-bold text-xl mb-1">Kristina</h3>
+                  <p class="text-white/90 text-sm leading-relaxed">
+                    Award-winning cake designer with 15+ years of experience
+                  </p>
+                </div>
+              </div>
+              <button
+                class="w-full px-6 py-3 bg-white rounded-full text-bento-pink-dark font-semibold hover:bg-white/90 transition-colors"
+              >
+                View Profile
+              </button>
+            </div>
+
+            <!-- Info Card 1 -->
+            <div class="bg-bento-pink-light rounded-[20px] p-6">
+              <div class="h-20 bg-bento-pink rounded-[16px] mb-3"></div>
+              <p class="text-bento-pink-darker font-medium text-sm">
+                Small class sizes for personalized attention
+              </p>
+            </div>
+
+            <!-- Info Card 2 -->
+            <div class="bg-bento-pink-light rounded-[20px] p-6">
+              <div class="h-20 bg-bento-pink rounded-[16px] mb-3"></div>
+              <p class="text-bento-pink-darker font-medium text-sm">
+                All materials and ingredients provided
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Import a serif font for titles */
+  @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+</style>
