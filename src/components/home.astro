@@ -17,7 +17,8 @@ import SkillsList from "../React/SkillsList.tsx";
         </h1>
         <p class="text-md md:text-2xl text-[var(--white-icon)]">
           Transforming ideas into powerful and reliable digital solutions with
-          cutting-edge <span class="text-[var(--sec)] shiny-sec">backend</span> development.
+          cutting-edge <span class="text-[var(--sec)] shiny-sec rotating-text"
+          ></span>
         </p>
       </div>
       <div class="flex justify-start gap-2 pt-3 md:pt-6">
@@ -124,21 +125,89 @@ import SkillsList from "../React/SkillsList.tsx";
 
 <style is:global>
   .shiny-sec {
-    background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
-    background-size: 400% 100%;
+    background: linear-gradient(
+      90deg,
+      #ff8c3a 0%,
+      #ffb570 25%,
+      #ffe4b8 50%,
+      #ffb570 75%,
+      #ff8c3a 100%
+    );
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: shine 3s linear infinite;
+    animation: shine 2s linear infinite;
+    display: inline-block;
+    min-width: 130px;
   }
 
   @keyframes shine {
     0% {
-      background-position: 100% 50%;
-    }
-    30%,
-    70% {
       background-position: 0% 50%;
     }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  .rotating-text {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .rotating-text.fade-out {
+    opacity: 0;
   }
 </style>
+
+<script>
+  const rotatingText = document.querySelector(".rotating-text");
+  if (rotatingText) {
+    const words = ["BELLEZA", "CUIDADO", "ELEGANCIA"];
+    let currentIndex = 0;
+
+    // Función para escribir letra por letra
+    function typeWord(word: string) {
+      let charIndex = 0;
+      rotatingText.textContent = "";
+      rotatingText.classList.remove("fade-out");
+
+      const typingInterval = setInterval(() => {
+        if (charIndex < word.length) {
+          rotatingText.textContent += word[charIndex];
+          charIndex++;
+        } else {
+          clearInterval(typingInterval);
+        }
+      }, 100); // 100ms por letra
+    }
+
+    // Función para borrar letra por letra
+    function eraseWord() {
+      const currentText = rotatingText.textContent || "";
+      let charIndex = currentText.length;
+
+      const erasingInterval = setInterval(() => {
+        if (charIndex > 0) {
+          rotatingText.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          clearInterval(erasingInterval);
+          // Cambiar a la siguiente palabra
+          currentIndex = (currentIndex + 1) % words.length;
+          setTimeout(() => typeWord(words[currentIndex]), 200);
+        }
+      }, 80); // 80ms por letra al borrar
+    }
+
+    // Iniciar con la primera palabra
+    typeWord(words[0]);
+
+    // Ciclo de escritura y borrado
+    setInterval(() => {
+      eraseWord();
+    }, 3000); // Esperar 3 segundos antes de borrar
+  }
+</script>
