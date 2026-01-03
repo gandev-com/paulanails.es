@@ -12,7 +12,7 @@ const services = [
     description: "Tratamiento profesional para tus pies",
   },
   {
-    icon: "/svg/masajes.svg",
+    icon: "/svg/terapias.svg",
     title: "Masajes",
     description: "Relajación y bienestar corporal",
   },

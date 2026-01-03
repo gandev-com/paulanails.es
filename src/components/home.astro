@@ -165,32 +165,52 @@ import SkillsList from "../React/SkillsList.tsx";
           </div>
         </div>
 
-        <!-- Services & Skills Section - Bento Grid -->
+        <!-- Services Section - Full Width -->
         <h3
           class="text-[var(--white)] text-3xl md:text-4xl font-semibold mb-6 md:mb-8"
         >
           Nuestros Servicios
         </h3>
 
-        <section class="grid lg:grid-cols-3 gap-6 md:gap-8">
-          <!-- Left Panel - Skills -->
-          <div class="lg:col-span-2">
-            <SkillsList client:load />
-          </div>
+        <section class="mb-12 md:mb-16">
+          <SkillsList client:load />
+        </section>
 
-          <!-- Right Panel - Map + Info Cards -->
+        <!-- Separador -->
+        <div class="flex justify-center my-12 md:my-16">
+          <div
+            class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-black to-transparent opacity-20"
+          >
+          </div>
+        </div>
+
+        <!-- Contact Section -->
+        <h3
+          class="text-[var(--white)] text-3xl md:text-4xl font-semibold mb-6 md:mb-8"
+        >
+          Contáctanos
+        </h3>
+
+        <section class="grid lg:grid-cols-2 gap-6 md:gap-8">
+          <!-- Map Card -->
           <div class="flex flex-col gap-6 h-full">
-            <!-- Map Card - Ocupa más espacio -->
+            <!-- Map Card -->
             <div
               class="rounded-[24px] p-6 relative overflow-hidden group flex-grow"
               style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink));"
             >
               <div class="h-full flex flex-col gap-4">
-                <h4
-                  class="text-[var(--white)] text-xl md:text-2xl font-semibold text-center"
-                >
-                  📍 Encuéntranos aquí
-                </h4>
+                <div class="text-center mb-2">
+                  <h4
+                    class="text-[var(--white)] text-xl md:text-2xl font-semibold"
+                  >
+                    📍 Visítanos
+                  </h4>
+                  <p class="text-[var(--white-icon)] text-sm mt-2">
+                    Calle Licenciado de Madrid Local 10<br/>
+                    Alcalá de Henares, Madrid
+                  </p>
+                </div>
 
                 <!-- Google Maps Embed -->
                 <div class="flex-1 rounded-[16px] overflow-hidden shadow-lg">
@@ -206,27 +226,28 @@ import SkillsList from "../React/SkillsList.tsx";
               </div>
             </div>
 
-            <!-- CTA Card -->
-            <div
-              class="rounded-[20px] p-6 text-center flex-shrink-0"
-              style="background-color: var(--bento-pink-light);"
+          </div>
+
+          <!-- CTA Card -->
+          <div
+            class="rounded-[24px] p-6 text-center flex flex-col justify-center"
+            style="background-color: var(--bento-pink-light);"
+          >
+            <p
+              class="text-[var(--white)] font-semibold text-base md:text-lg mb-3"
             >
-              <p
-                class="text-[var(--white)] font-semibold text-base md:text-lg mb-3"
-              >
-                ✨ ¿Lista para transformar tu look?
-              </p>
-              <p class="text-[var(--white-icon)] text-sm mb-4">
-                Déjate consentir con nuestros servicios profesionales
-              </p>
-              <a
-                href="#contact"
-                class="inline-block px-6 py-2.5 rounded-full font-medium text-sm transition-all hover:shadow-lg transform hover:scale-105"
-                style="background-color: var(--sec); color: var(--white);"
-              >
-                Agenda tu cita
-              </a>
-            </div>
+              💅 ¿Tienes dudas sobre nuestros servicios?
+            </p>
+            <p class="text-[var(--white-icon)] text-sm mb-4">
+              Contáctanos y te asesoraremos para elegir el tratamiento perfecto para ti. ¡Agenda tu cita ahora!
+            </p>
+            <a
+              href="#contact"
+              class="inline-block px-6 py-2.5 rounded-full font-medium text-sm transition-all hover:shadow-lg transform hover:scale-105"
+              style="background-color: var(--sec); color: var(--white);"
+            >
+              Agenda tu cita
+            </a>
           </div>
         </section>
       </div>
