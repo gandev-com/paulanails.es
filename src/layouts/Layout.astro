@@ -26,6 +26,9 @@ const { title } = Astro.props;
     <meta property="og:site_name" content="paula nails" />
     <meta property="og:locale" content="en_US" />
 
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="/nails/store-colors-manicure.webp" fetchpriority="high" />
+
     <title>{title}</title>
   </head>
   <body class="bg-[--background]">
@@ -34,9 +37,16 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-  @import url("https://fonts.cdnfonts.com/css/montserrat");
-  @import url("https://fonts.cdnfonts.com/css/edwardian-script-itc");
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
+  @font-face {
+    font-family: "Edwardian Script ITC";
+    src: url("/fonts/edwardianscriptitc.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
   .font-edwardian {
     font-family: "Edwardian Script ITC", cursive;
