@@ -1,13 +1,17 @@
 ---
 import SkillsList from "../react/SkillsList.tsx";
+import "../../styles/sections/ServicesSection.css";
 ---
 
-<section class="mb-12 md:mb-16">
-  <h3
-    class="text-center text-3xl md:text-4xl font-semibold mb-6 md:mb-8"
-    style="color: var(--text-primary);"
-  >
-    Servicios de Belleza en Alcalá de Henares
-  </h3>
-  <SkillsList client:load />
+<section class="services-section">
+  <div class="services-header">
+    <p class="services-eyebrow">Experiencias premium</p>
+    <h3 class="services-title">Servicios de Belleza en Alcalá de Henares</h3>
+    <p class="services-subtitle">
+      Tratamientos personalizados para realzar tu belleza natural
+    </p>
+  </div>
+  <div class="services-wrapper">
+    <SkillsList client:load />
+  </div>
 </section>

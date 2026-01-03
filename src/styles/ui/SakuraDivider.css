@@ -1,0 +1,71 @@
+/* Sakura Divider Component Styles */
+
+.sakura-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .sakura-divider {
+    margin: 3.5rem 0;
+  }
+}
+
+.sakura-divider-svg {
+  color: var(--pink-light);
+  filter: blur(0.5px);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animación sutil de aparición */
+.sakura-flower {
+  animation: petalBloom 3s ease-out;
+}
+
+.sakura-flower-left {
+  animation-delay: 0.2s;
+}
+
+.sakura-flower-center {
+  animation-delay: 0.4s;
+}
+
+.sakura-flower-right {
+  animation-delay: 0.6s;
+}
+
+@keyframes petalBloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover sutil en dispositivos que lo soportan */
+@media (hover: hover) {
+  .sakura-divider:hover .sakura-branch {
+    opacity: 0.25;
+    transition: opacity 0.6s ease;
+  }
+
+  .sakura-divider:hover .sakura-flower {
+    opacity: 1.2;
+    transition: opacity 0.6s ease;
+  }
+}
+
+/* Respetar prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .sakura-flower {
+    animation: none;
+    opacity: 1;
+  }
+}
