@@ -2,25 +2,32 @@
 // Footer component
 ---
 
-<footer class="w-full py-12 border-t border-[#ffffff10]">
+<footer class="w-full py-12" style="border-top: 1px solid var(--border-light);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Main Footer Content -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       <!-- Columna 1: Sobre Paula Nails -->
       <div class="space-y-4">
-        <h3 class="text-[var(--white)] text-lg font-semibold font-edwardian">
+        <h3
+          class="text-lg font-semibold font-edwardian"
+          style="color: var(--text-primary);"
+        >
           Paula Nails
         </h3>
-        <p class="text-[var(--white-icon)] text-sm leading-relaxed">
-          Centro de estética especializado en diseño de uñas y cuidado personal
-          en Alcalá de Henares.
+        <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+          Tu centro de estética y belleza de confianza en Alcalá de Henares.
+          Especialistas en manicura, pedicura, uñas acrílicas, depilación láser
+          y tratamientos de belleza.
         </p>
         <div class="flex gap-4">
           <a
-            href="https://instagram.com/paulanails"
+            href="https://www.instagram.com/paulanails.es?igsh=MWIxZjNyOXdzbHp1Nw=="
             target="_blank"
             aria-label="Instagram"
-            class="text-[var(--white-icon)] hover:text-[var(--sec)] transition duration-300"
+            class="transition duration-300"
+            style="color: var(--icon-color-light);"
+            onmouseover="this.style.color='var(--primary)'"
+            onmouseout="this.style.color='var(--icon-color-light)'"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -39,10 +46,13 @@
             </svg>
           </a>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/+34660775255"
             target="_blank"
             aria-label="WhatsApp"
-            class="text-[var(--white-icon)] hover:text-[var(--sec)] transition duration-300"
+            class="transition duration-300"
+            style="color: var(--icon-color-light);"
+            onmouseover="this.style.color='var(--primary)'"
+            onmouseout="this.style.color='var(--icon-color-light)'"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -2,7 +2,7 @@
 // Hero Section - Full Width con Parallax y slider de imágenes
 ---
 
-<section class="text-[var(--white)]" id="home">
+<section id="home" style="color: var(--text-primary);">
   <div class="relative w-full h-screen md:h-[70vh] overflow-hidden">
     <!-- Background Slider con Parallax -->
     <div class="hero-background absolute inset-0 w-full h-full">
@@ -38,7 +38,15 @@
         />
       </div>
       <!-- Overlay oscuro para mejor contraste -->
-      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0" style="background: var(--overlay-dark);">
+      </div>
+
+      <!-- Gradiente difuminado inferior para integración suave -->
+      <div
+        class="absolute bottom-0 left-0 right-0 h-12 md:h-16 pointer-events-none"
+        style="background: linear-gradient(to bottom, transparent 0%, rgba(236, 212, 226, 0.1) 60%, var(--background) 100%);"
+      >
+      </div>
     </div>
 
     <!-- Contenido del Hero centrado -->
@@ -65,8 +73,9 @@
         <p
           class="text-white text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Experta en diseño de uñas con técnicas profesionales. Creando arte en
-          tus manos con los mejores productos del mercado.
+          Centro de estética y belleza en Alcalá de Henares especializado en
+          manicura, pedicura y diseño de uñas. Tratamientos profesionales con
+          los mejores productos del mercado.
         </p>
 
         <!-- Social Icons & CTA Button -->
@@ -76,12 +85,12 @@
           <div class="flex gap-2">
             <a
               target="_blank"
-              href="https://github.com/Gan-dev"
+              href="https://www.instagram.com/paulanails.es?igsh=MWIxZjNyOXdzbHp1Nw=="
               aria-label="Instagram"
-              style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink-light);"
+              style="color: var(--icon-color); border-color: var(--border-light); background-color: var(--pink-light);"
               class="hover:text-white transition duration-300 ease-in-out border border-1 p-2 md:p-3 rounded-xl"
-              onmouseover="this.style.backgroundColor='var(--bento-pink)'"
-              onmouseout="this.style.backgroundColor='var(--bento-pink-light)'"
+              onmouseover="this.style.backgroundColor='var(--pink)'"
+              onmouseout="this.style.backgroundColor='var(--pink-light)'"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -103,10 +112,10 @@
               target="_blank"
               href="https://www.tiktok.com"
               aria-label="TikTok"
-              style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink-light);"
+              style="color: var(--icon-color); border-color: var(--border-light); background-color: var(--pink-light);"
               class="hover:text-white transition duration-300 ease-in-out border border-1 p-2 md:p-3 rounded-xl"
-              onmouseover="this.style.backgroundColor='var(--bento-pink)'"
-              onmouseout="this.style.backgroundColor='var(--bento-pink-light)'"
+              onmouseover="this.style.backgroundColor='var(--pink)'"
+              onmouseout="this.style.backgroundColor='var(--pink-light)'"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,12 +131,12 @@
             </a>
             <a
               target="_blank"
-              href="https://wa.me/1234567890"
+              href="https://wa.me/+34660775255"
               aria-label="WhatsApp"
-              style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink-light);"
+              style="color: var(--icon-color); border-color: var(--border-light); background-color: var(--pink-light);"
               class="hover:text-white transition duration-300 ease-in-out border border-1 p-2 md:p-3 rounded-xl"
-              onmouseover="this.style.backgroundColor='var(--bento-pink)'"
-              onmouseout="this.style.backgroundColor='var(--bento-pink-light)'"
+              onmouseover="this.style.backgroundColor='var(--pink)'"
+              onmouseout="this.style.backgroundColor='var(--pink-light)'"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -145,10 +154,10 @@
 
           <a
             href="#contact"
-            style="color: var(--white); background-color: var(--bento-pink);"
+            style="color: var(--text-on-pink); background-color: var(--pink);"
             class="px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transform hover:scale-105 transition-all backdrop-blur-sm"
-            onmouseover="this.style.backgroundColor='var(--bento-pink-dark)'"
-            onmouseout="this.style.backgroundColor='var(--bento-pink)'"
+            onmouseover="this.style.backgroundColor='var(--pink-dark)'"
+            onmouseout="this.style.backgroundColor='var(--pink)'"
           >
             Agendar cita
           </a>
@@ -171,14 +180,7 @@
   }
 
   .shiny-sec {
-    background: linear-gradient(
-      90deg,
-      #ff1744 0%,
-      #ff6b9d 25%,
-      #ffffff 50%,
-      #ff6b9d 75%,
-      #ff1744 100%
-    );
+    background: var(--shine-gradient);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;

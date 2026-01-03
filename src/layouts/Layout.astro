@@ -12,19 +12,36 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Software Developer" />
+    <meta
+      name="description"
+      content="Centro de estética y belleza en Alcalá de Henares. Manicura, pedicura, uñas acrílicas, depilación láser, peluquería y tratamientos de belleza. ¡Reserva tu cita!"
+    />
+    <meta
+      name="keywords"
+      content="manicura Alcalá de Henares, pedicura, uñas acrílicas, depilación láser, peluquería, centro de belleza, estética Alcalá, salón de uñas, nail art, tratamientos belleza"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Paula Nails" />
+    <meta name="geo.region" content="ES-M" />
+    <meta name="geo.placename" content="Alcalá de Henares" />
+    <meta name="geo.position" content="40.4819;-3.3666" />
     <link rel="icon" type="image/png" href="/favicon.ico" />
-    <meta property="og:title" content="Gandev.dev" />
-    <meta property="og:description" content="Software Developer" />
+    <meta
+      property="og:title"
+      content="Paula Nails - Centro de Estética y Belleza en Alcalá de Henares"
+    />
+    <meta
+      property="og:description"
+      content="Centro de estética especializado en manicura, pedicura, uñas acrílicas y tratamientos de belleza en Alcalá de Henares"
+    />
     <meta
       property="og:image"
-      content="https://gandev.vercel.app/og.image.png"
+      content="https://paulanails.es/nails/store-colors-manicure.webp"
     />
-    <meta property="og:url" content="https://gandev.vercel.app" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="paula nails" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://paulanails.es" />
+    <meta property="og:type" content="business.business" />
+    <meta property="og:site_name" content="Paula Nails Alcalá de Henares" />
+    <meta property="og:locale" content="es_ES" />
 
     <!-- Preload critical images -->
     <link
@@ -34,7 +51,45 @@ const { title } = Astro.props;
       fetchpriority="high"
     />
 
-    <title>{title}</title>
+    <title>{title} - Centro de Belleza y Estética en Alcalá de Henares</title>
+
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Paula Nails",
+        "description": "Centro de estética especializado en manicura, pedicura y tratamientos de belleza en Alcalá de Henares",
+        "image": "https://paulanails.es/nails/store-colors-manicure.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Alcalá de Henares",
+          "addressRegion": "Madrid",
+          "addressCountry": "ES"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.4819,
+          "longitude": -3.3666
+        },
+        "url": "https://paulanails.es",
+        "telephone": "+34660775255",
+        "priceRange": "€€",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      }
+    </script>
   </head>
   <body class="bg-[--background]">
     <slot />
@@ -56,20 +111,92 @@ const { title } = Astro.props;
   .font-edwardian {
     font-family: "Edwardian Script ITC", cursive;
   }
-  /***  #ECD4E2 
-#fcd4b3
-*/
+  /*** Sistema de Colores Global - Paula Nails ***/
   :root {
+    /* Colores Base */
     --background: #ecd4e2;
+    --background-secondary: #f5e4ed;
+    --background-dark: #d9bfd0;
+
+    /* Componentes */
     --component-bg: #edb5c1f2;
-    --sec: #fa97ac;
-    --white: #000000;
-    --white-icon: #000000;
-    --white-icon-tr: #f3f3f310;
-    --bg-icon: #edb5c1f2;
+    --component-bg-hover: #e5a3b0;
+
+    /* Colores de Acento/Primarios */
+    --primary: #fa97ac;
+    --primary-light: #ffc4d1;
+    --primary-dark: #e8758c;
+
+    /* Colores Pink/Rosa (Botones y Cards) */
+    --pink-light: #ffd4e5;
+    --pink: #ffb3d1;
+    --pink-dark: #ff91b8;
+    --pink-darker: #e8769a;
+
+    /* Colores de Texto */
+    --text-primary: #000000;
+    --text-secondary: #2d2d2d;
+    --text-muted: #4a4a4a;
+    --text-on-pink: #ffffff;
+
+    /* Colores para Iconos */
+    --icon-color: #000000;
+    --icon-color-light: #4a4a4a;
+    --icon-bg: #edb5c1f2;
+    --icon-bg-hover: #e5a3b0;
+
+    /* Bordes y Separadores */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-light: rgba(255, 255, 255, 0.1);
+    --separator: rgba(0, 0, 0, 0.2);
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+
+    /* Estados */
+    --hover-overlay: rgba(255, 255, 255, 0.1);
+    --active-overlay: rgba(0, 0, 0, 0.05);
+
+    /* Gradientes */
+    --gradient-pink: linear-gradient(135deg, var(--pink-light), var(--pink));
+    --gradient-pink-dark: linear-gradient(
+      135deg,
+      var(--pink),
+      var(--pink-dark)
+    );
+    --gradient-primary: linear-gradient(
+      135deg,
+      var(--primary-light),
+      var(--primary)
+    );
+
+    /* Efectos Especiales */
+    --shine-gradient: linear-gradient(
+      90deg,
+      #ff1744 0%,
+      #ff6b9d 25%,
+      #ffffff 50%,
+      #ff6b9d 75%,
+      #ff1744 100%
+    );
+
+    /* Overlay */
+    --overlay-dark: rgba(0, 0, 0, 0.5);
+    --overlay-light: rgba(255, 255, 255, 0.5);
+
+    /* Compatibilidad con código legacy */
+    --sec: var(--primary);
+    --white: var(--text-primary);
+    --white-icon: var(--icon-color);
+    --white-icon-tr: var(--border-light);
+    --bg-icon: var(--icon-bg);
     --hover-text-color: #fcd4b3;
-    --bento-pink-light: #ffd4e5;
-    --bento-pink: #ffb3d1;
+    --bento-pink-light: var(--pink-light);
+    --bento-pink: var(--pink);
+    --bento-pink-dark: var(--pink-dark);
   }
 
   * {
