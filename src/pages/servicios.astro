@@ -17,8 +17,7 @@ import Footer from "../components/footer.astro";
         <p
           class="text-lg md:text-xl text-[var(--white-icon)] max-w-3xl mx-auto"
         >
-          Descubre toda la gama de servicios profesionales de belleza y
-          bienestar que ofrecemos
+          Experiencias de belleza diseñadas para realzar tu esencia
         </p>
       </div>
 
@@ -28,252 +27,532 @@ import Footer from "../components/footer.astro";
       >
         <!-- Manicura -->
         <div
-          class="rounded-[28px] min-h-[300px] shadow-lg relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
           style="background-color: var(--background);"
         >
           <div
-            class="absolute inset-0 rounded-[28px] z-0 transition-opacity group-hover:opacity-90"
-            style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%);"
+            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
+            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
           >
           </div>
 
           <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 group-hover:opacity-30 transition-opacity"
-            style="width: 60%; height: 60%;"
+            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
+            style="width: 55%; height: 55%;"
           >
             <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-5xl"
+              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
             >
-              💅
+              <img src="/svg/manicura.svg" alt="Manicura" class="w-16 h-16 object-contain" />
             </div>
           </div>
 
-          <div class="relative z-20 p-6 h-full flex flex-col justify-between">
-            <div class="text-3xl">💅</div>
-            <div>
+          <div class="relative z-20 p-6 h-full flex flex-col">
+            <div class="mb-4">
+              <img src="/svg/manicura.svg" alt="Manicura" class="w-10 h-10 object-contain" />
+            </div>
+            <div class="flex-1">
               <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-3"
+                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
               >
                 Manicura
               </h3>
-              <ul class="text-[var(--white-icon)] text-sm space-y-2">
-                <li>• Manicura clásica</li>
-                <li>• Manicura francesa</li>
-                <li>• Uñas acrílicas</li>
-                <li>• Uñas de gel</li>
-                <li>• Diseños personalizados</li>
-                <li>• Nail art</li>
-              </ul>
+              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
+                El arte en la punta de tus dedos
+              </p>
+
+              <div
+                class="service-details"
+                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
+              >
+                <p
+                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
+                >
+                  Transforma tus manos con técnicas profesionales y productos de
+                  alta gama. Desde lo clásico hasta lo más atrevido.
+                </p>
+
+                <div class="mb-4">
+                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
+                    Incluye:
+                  </h4>
+                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
+                    <li>• Manicura clásica y francesa</li>
+                    <li>• Uñas acrílicas y de gel</li>
+                    <li>• Diseños personalizados y nail art</li>
+                    <li>• Esmaltado semipermanente</li>
+                  </ul>
+                </div>
+
+                <div
+                  class="mb-4 p-3 rounded-xl"
+                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
+                >
+                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
+                    Desde
+                  </p>
+                  <p class="text-[var(--white)] text-2xl font-bold">22–45 €</p>
+                </div>
+
+                <a
+                  href="/#contact"
+                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
+                  style="background: var(--sec); color: var(--white);"
+                >
+                  Reservar ahora
+                </a>
+              </div>
+
+              <button
+                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Ver detalles
+              </button>
             </div>
           </div>
         </div>
 
         <!-- Pedicura -->
         <div
-          class="rounded-[28px] min-h-[300px] shadow-lg relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
           style="background-color: var(--background);"
         >
           <div
-            class="absolute inset-0 rounded-[28px] z-0 transition-opacity group-hover:opacity-90"
-            style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%);"
+            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
+            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
           >
           </div>
 
           <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 group-hover:opacity-30 transition-opacity"
-            style="width: 60%; height: 60%;"
+            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
+            style="width: 55%; height: 55%;"
           >
             <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-5xl"
+              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
             >
-              🦶
+              <img src="/svg/pedicura.svg" alt="Pedicura" class="w-16 h-16 object-contain" />
             </div>
           </div>
 
-          <div class="relative z-20 p-6 h-full flex flex-col justify-between">
-            <div class="text-3xl">🦶</div>
-            <div>
+          <div class="relative z-20 p-6 h-full flex flex-col">
+            <div class="mb-4">
+              <img src="/svg/pedicura.svg" alt="Pedicura" class="w-10 h-10 object-contain" />
+            </div>
+            <div class="flex-1">
               <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-3"
+                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
               >
                 Pedicura
               </h3>
-              <ul class="text-[var(--white-icon)] text-sm space-y-2">
-                <li>• Pedicura clásica</li>
-                <li>• Pedicura spa</li>
-                <li>• Tratamiento de callos</li>
-                <li>• Hidratación profunda</li>
-                <li>• Esmaltado permanente</li>
-                <li>• Diseños para pies</li>
-              </ul>
+              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
+                Bienestar desde la base
+              </p>
+
+              <div
+                class="service-details"
+                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
+              >
+                <p
+                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
+                >
+                  Ritual completo para tus pies: exfoliación, hidratación y
+                  acabado impecable. Mereces caminar sobre nubes.
+                </p>
+
+                <div class="mb-4">
+                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
+                    Incluye:
+                  </h4>
+                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
+                    <li>• Pedicura clásica y spa</li>
+                    <li>• Tratamiento de callosidades</li>
+                    <li>• Hidratación profunda</li>
+                    <li>• Esmaltado permanente</li>
+                    <li>• Diseños para pies</li>
+                  </ul>
+                </div>
+
+                <div
+                  class="mb-4 p-3 rounded-xl"
+                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
+                >
+                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
+                    Desde
+                  </p>
+                  <p class="text-[var(--white)] text-2xl font-bold">28–50 €</p>
+                </div>
+
+                <a
+                  href="/#contact"
+                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
+                  style="background: var(--sec); color: var(--white);"
+                >
+                  Reservar ahora
+                </a>
+              </div>
+
+              <button
+                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Ver detalles
+              </button>
             </div>
           </div>
         </div>
 
         <!-- Masajes -->
         <div
-          class="rounded-[28px] min-h-[300px] shadow-lg relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
           style="background-color: var(--background);"
         >
           <div
-            class="absolute inset-0 rounded-[28px] z-0 transition-opacity group-hover:opacity-90"
-            style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%);"
+            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
+            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
           >
           </div>
 
           <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 group-hover:opacity-30 transition-opacity"
-            style="width: 60%; height: 60%;"
+            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
+            style="width: 55%; height: 55%;"
           >
             <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-5xl"
+              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
             >
-              💆
+              <img src="/svg/terapias.svg" alt="Masajes" class="w-16 h-16 object-contain" />
             </div>
           </div>
 
-          <div class="relative z-20 p-6 h-full flex flex-col justify-between">
-            <div class="text-3xl">💆</div>
-            <div>
+          <div class="relative z-20 p-6 h-full flex flex-col">
+            <div class="mb-4">
+              <img src="/svg/terapias.svg" alt="Masajes" class="w-10 h-10 object-contain" />
+            </div>
+            <div class="flex-1">
               <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-3"
+                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
               >
                 Masajes
               </h3>
-              <ul class="text-[var(--white-icon)] text-sm space-y-2">
-                <li>• Masaje relajante</li>
-                <li>• Masaje descontracturante</li>
-                <li>• Masaje deportivo</li>
-                <li>• Reflexología podal</li>
-                <li>• Drenaje linfático</li>
-                <li>• Masaje con piedras calientes</li>
-              </ul>
+              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
+                Equilibrio para cuerpo y mente
+              </p>
+
+              <div
+                class="service-details"
+                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
+              >
+                <p
+                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
+                >
+                  Libera tensiones, reconecta contigo. Terapias manuales
+                  adaptadas a lo que tu cuerpo necesita hoy.
+                </p>
+
+                <div class="mb-4">
+                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
+                    Incluye:
+                  </h4>
+                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
+                    <li>• Masaje relajante y descontracturante</li>
+                    <li>• Masaje deportivo</li>
+                    <li>• Reflexología podal</li>
+                    <li>• Drenaje linfático</li>
+                    <li>• Piedras calientes</li>
+                  </ul>
+                </div>
+
+                <div
+                  class="mb-4 p-3 rounded-xl"
+                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
+                >
+                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
+                    Desde
+                  </p>
+                  <p class="text-[var(--white)] text-2xl font-bold">35–65 €</p>
+                </div>
+
+                <a
+                  href="/#contact"
+                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
+                  style="background: var(--sec); color: var(--white);"
+                >
+                  Reservar ahora
+                </a>
+              </div>
+
+              <button
+                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Ver detalles
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Láser -->
+        <!-- Depilación Láser -->
         <div
-          class="rounded-[28px] min-h-[300px] shadow-lg relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
           style="background-color: var(--background);"
         >
           <div
-            class="absolute inset-0 rounded-[28px] z-0 transition-opacity group-hover:opacity-90"
-            style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%);"
+            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
+            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
           >
           </div>
 
           <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 group-hover:opacity-30 transition-opacity"
-            style="width: 60%; height: 60%;"
+            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
+            style="width: 55%; height: 55%;"
           >
             <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-5xl"
+              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
             >
-              ✨
+              <img src="/svg/laser.svg" alt="Depilación Láser" class="w-16 h-16 object-contain" />
             </div>
           </div>
 
-          <div class="relative z-20 p-6 h-full flex flex-col justify-between">
-            <div class="text-3xl">✨</div>
-            <div>
+          <div class="relative z-20 p-6 h-full flex flex-col">
+            <div class="mb-4">
+              <img src="/svg/laser.svg" alt="Depilación Láser" class="w-10 h-10 object-contain" />
+            </div>
+            <div class="flex-1">
               <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-3"
+                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
               >
                 Depilación Láser
               </h3>
-              <ul class="text-[var(--white-icon)] text-sm space-y-2">
-                <li>• Tecnología de última generación</li>
-                <li>• Todas las zonas del cuerpo</li>
-                <li>• Tratamiento personalizado</li>
-                <li>• Resultados duraderos</li>
-                <li>• Seguro para todo tipo de piel</li>
-                <li>• Sesiones rápidas e indoloras</li>
-              </ul>
+              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
+                Adiós al vello, hola a la libertad
+              </p>
+
+              <div
+                class="service-details"
+                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
+              >
+                <p
+                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
+                >
+                  Tecnología de última generación para resultados duraderos.
+                  Tratamiento indoloro, rápido y efectivo.
+                </p>
+
+                <div class="mb-4">
+                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
+                    Incluye:
+                  </h4>
+                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
+                    <li>• Tecnología Diodo/Alejandrita</li>
+                    <li>• Todas las zonas corporales</li>
+                    <li>• Valoración personalizada</li>
+                    <li>• Apto para todo tipo de piel</li>
+                    <li>• Sesiones rápidas e indoloras</li>
+                  </ul>
+                </div>
+
+                <div
+                  class="mb-4 p-3 rounded-xl"
+                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
+                >
+                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
+                    Desde
+                  </p>
+                  <p class="text-[var(--white)] text-2xl font-bold">25–120 €</p>
+                  <p class="text-[var(--white-icon)] text-xs mt-1">
+                    por sesión / zona
+                  </p>
+                </div>
+
+                <a
+                  href="/#contact"
+                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
+                  style="background: var(--sec); color: var(--white);"
+                >
+                  Reservar ahora
+                </a>
+              </div>
+
+              <button
+                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Ver detalles
+              </button>
             </div>
           </div>
         </div>
 
         <!-- Peluquería -->
         <div
-          class="rounded-[28px] min-h-[300px] shadow-lg relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
           style="background-color: var(--background);"
         >
           <div
-            class="absolute inset-0 rounded-[28px] z-0 transition-opacity group-hover:opacity-90"
-            style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%);"
+            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
+            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
           >
           </div>
 
           <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 group-hover:opacity-30 transition-opacity"
-            style="width: 60%; height: 60%;"
+            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
+            style="width: 55%; height: 55%;"
           >
             <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-5xl"
+              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
             >
-              💇
+              <img src="/svg/peluqueria.svg" alt="Peluquería" class="w-16 h-16 object-contain" />
             </div>
           </div>
 
-          <div class="relative z-20 p-6 h-full flex flex-col justify-between">
-            <div class="text-3xl">💇</div>
-            <div>
+          <div class="relative z-20 p-6 h-full flex flex-col">
+            <div class="mb-4">
+              <img src="/svg/peluqueria.svg" alt="Peluquería" class="w-10 h-10 object-contain" />
+            </div>
+            <div class="flex-1">
               <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-3"
+                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
               >
                 Peluquería
               </h3>
-              <ul class="text-[var(--white-icon)] text-sm space-y-2">
-                <li>• Corte y peinado</li>
-                <li>• Coloración y mechas</li>
-                <li>• Tratamientos capilares</li>
-                <li>• Alisados y permanentes</li>
-                <li>• Peinados para eventos</li>
-                <li>• Extensiones de cabello</li>
-              </ul>
+              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
+                Tu cabello, nuestra inspiración
+              </p>
+
+              <div
+                class="service-details"
+                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
+              >
+                <p
+                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
+                >
+                  Cortes, color, peinados y tratamientos. Cada melena es única,
+                  cada look cuenta tu historia.
+                </p>
+
+                <div class="mb-4">
+                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
+                    Incluye:
+                  </h4>
+                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
+                    <li>• Corte y peinado profesional</li>
+                    <li>• Coloración y mechas</li>
+                    <li>• Tratamientos capilares premium</li>
+                    <li>• Alisados y permanentes</li>
+                    <li>• Peinados para eventos</li>
+                    <li>• Extensiones de cabello</li>
+                  </ul>
+                </div>
+
+                <div
+                  class="mb-4 p-3 rounded-xl"
+                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
+                >
+                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
+                    Desde
+                  </p>
+                  <p class="text-[var(--white)] text-2xl font-bold">18–85 €</p>
+                </div>
+
+                <a
+                  href="/#contact"
+                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
+                  style="background: var(--sec); color: var(--white);"
+                >
+                  Reservar ahora
+                </a>
+              </div>
+
+              <button
+                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Ver detalles
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Terapias -->
+        <!-- Terapias y Bienestar -->
         <div
-          class="rounded-[28px] min-h-[300px] shadow-lg relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
           style="background-color: var(--background);"
         >
           <div
-            class="absolute inset-0 rounded-[28px] z-0 transition-opacity group-hover:opacity-90"
-            style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%);"
+            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
+            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
           >
           </div>
 
           <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 group-hover:opacity-30 transition-opacity"
-            style="width: 60%; height: 60%;"
+            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
+            style="width: 55%; height: 55%;"
           >
             <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-5xl"
+              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
             >
-              🌸
+              <img src="/svg/terapias.svg" alt="Terapias" class="w-16 h-16 object-contain" />
             </div>
           </div>
 
-          <div class="relative z-20 p-6 h-full flex flex-col justify-between">
-            <div class="text-3xl">🌸</div>
-            <div>
+          <div class="relative z-20 p-6 h-full flex flex-col">
+            <div class="mb-4">
+              <img src="/svg/terapias.svg" alt="Terapias" class="w-10 h-10 object-contain" />
+            </div>
+            <div class="flex-1">
               <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-3"
+                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
               >
-                Terapias y Bienestar
+                Terapias
               </h3>
-              <ul class="text-[var(--white-icon)] text-sm space-y-2">
-                <li>• Tratamientos faciales</li>
-                <li>• Limpieza profunda</li>
-                <li>• Hidratación facial</li>
-                <li>• Anti-edad</li>
-                <li>• Aromaterapia</li>
-                <li>• Tratamientos corporales</li>
-              </ul>
+              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
+                Rituales para tu piel y alma
+              </p>
+
+              <div
+                class="service-details"
+                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
+              >
+                <p
+                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
+                >
+                  Tratamientos faciales y corporales que despiertan tu
+                  luminosidad natural. Porque cuidarte es un acto de amor.
+                </p>
+
+                <div class="mb-4">
+                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
+                    Incluye:
+                  </h4>
+                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
+                    <li>• Tratamientos faciales premium</li>
+                    <li>• Limpieza profunda</li>
+                    <li>• Hidratación y luminosidad</li>
+                    <li>• Tratamientos anti-edad</li>
+                    <li>• Aromaterapia</li>
+                    <li>• Rituales corporales</li>
+                  </ul>
+                </div>
+
+                <div
+                  class="mb-4 p-3 rounded-xl"
+                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
+                >
+                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
+                    Desde
+                  </p>
+                  <p class="text-[var(--white)] text-2xl font-bold">30–75 €</p>
+                </div>
+
+                <a
+                  href="/#contact"
+                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
+                  style="background: var(--sec); color: var(--white);"
+                >
+                  Reservar ahora
+                </a>
+              </div>
+
+              <button
+                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Ver detalles
+              </button>
             </div>
           </div>
         </div>
@@ -282,23 +561,24 @@ import Footer from "../components/footer.astro";
       <!-- CTA Section -->
       <div class="mt-16 md:mt-20 text-center">
         <div
-          class="rounded-[32px] p-8 md:p-12 max-w-3xl mx-auto"
+          class="rounded-[32px] p-8 md:p-12 max-w-3xl mx-auto cta-card"
           style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink));"
         >
+          <div class="text-5xl mb-6">✨</div>
           <h2
             class="text-3xl md:text-4xl font-semibold mb-4 text-[var(--white)]"
           >
             ¿Lista para tu transformación?
           </h2>
-          <p class="text-[var(--white-icon)] mb-6 text-base md:text-lg">
-            Agenda tu cita y déjate consentir por nuestros profesionales
+          <p class="text-[var(--white-icon)] mb-8 text-base md:text-lg">
+            Reserva tu momento de bienestar y déjate mimar por expertas
           </p>
           <a
             href="/#contact"
-            class="inline-block px-8 py-4 rounded-full font-semibold text-base transition-all hover:shadow-lg transform hover:-translate-y-1"
+            class="inline-block px-8 py-4 rounded-full font-semibold text-base transition-all hover:shadow-2xl transform hover:-translate-y-1"
             style="background-color: var(--sec); color: var(--white);"
           >
-            Agendar Cita
+            Agendar mi cita
           </a>
         </div>
       </div>
@@ -309,7 +589,99 @@ import Footer from "../components/footer.astro";
 </Layout>
 
 <style>
+  .service-card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-card:hover .gradient-bg {
+    opacity: 0.95;
+  }
+
+  .service-card:hover .glass-corner {
+    opacity: 0.35;
+  }
+
+  .service-card.expanded {
+    grid-column: span 1;
+  }
+
+  @media (min-width: 1024px) {
+    .service-card.expanded {
+      grid-column: span 2;
+    }
+  }
+
+  .service-details {
+    transition:
+      max-height 0.5s ease,
+      opacity 0.5s ease,
+      margin-top 0.5s ease;
+  }
+
+  .service-card.expanded .service-details {
+    max-height: 1000px !important;
+    opacity: 1 !important;
+    margin-top: 1rem;
+  }
+
+  .details-btn {
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card.expanded .details-btn {
+    display: none;
+  }
+
+  .cta-card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .cta-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px rgba(255, 182, 209, 0.3);
+  }
+
   p {
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    serviceCards.forEach((card) => {
+      const btn = card.querySelector(".details-btn");
+
+      btn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        // Cerrar otras cards
+        serviceCards.forEach((otherCard) => {
+          if (otherCard !== card && otherCard.classList.contains("expanded")) {
+            otherCard.classList.remove("expanded");
+          }
+        });
+
+        // Toggle actual
+        card.classList.toggle("expanded");
+
+        // Scroll suave a la card expandida
+        if (card.classList.contains("expanded")) {
+          setTimeout(() => {
+            card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }, 100);
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,375 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/nav.astro";
+import Footer from "../components/footer.astro";
+---
+
+<Layout title="Sobre mí">
+  <Nav />
+
+  <main class="min-h-screen bg-gradient-to-b from-[#f5f1ed] to-[#faf8f6]">
+    <!-- HERO – IDENTIDAD -->
+    <section class="relative pt-32 pb-20 px-4 md:px-8 lg:px-16 overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Texto -->
+          <div class="space-y-6">
+            <h1
+              class="font-edwardian text-6xl md:text-7xl lg:text-8xl text-stone-800 leading-tight"
+            >
+              Sobre mí
+            </h1>
+            <p
+              class="text-lg md:text-xl text-stone-600 leading-relaxed font-light"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Cada
+              mano cuenta una historia, cada gesto es un acto de cuidado.
+            </p>
+            <div class="w-24 h-1 bg-gradient-to-r from-rose-300 to-transparent">
+            </div>
+          </div>
+
+          <!-- Imagen -->
+          <div class="relative">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="/nails/store-colors-manicure.webp"
+                alt="Paula trabajando en su salón de belleza"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Decoración -->
+            <div
+              class="absolute -top-6 -right-6 w-32 h-32 bg-rose-200/30 rounded-full blur-3xl -z-10"
+            >
+            </div>
+            <div
+              class="absolute -bottom-6 -left-6 w-40 h-40 bg-amber-100/40 rounded-full blur-3xl -z-10"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: EL ORIGEN -->
+    <section class="py-20 px-4 md:px-8 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-5 gap-12 items-start">
+          <!-- Título lateral -->
+          <div class="md:col-span-2">
+            <h2
+              class="font-edwardian text-5xl md:text-6xl text-stone-800 mb-4 sticky top-24"
+            >
+              El comienzo
+            </h2>
+            <div class="w-16 h-1 bg-rose-300"></div>
+          </div>
+
+          <!-- Contenido -->
+          <div class="md:col-span-3 space-y-6">
+            <p class="text-base md:text-lg text-stone-700 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              tempus lectus vitae augue venenatis, in blandit nunc scelerisque.
+              Quisque at lorem vel mauris tristique consectetur. Praesent
+              hendrerit turpis a tortor dignissim, non tempor erat semper. Sed
+              viverra nisi ac diam pretium, vel elementum orci finibus.
+            </p>
+            <p class="text-base md:text-lg text-stone-700 leading-relaxed">
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+              posuere cubilia curae. Donec vehicula justo non lectus facilisis,
+              in fringilla magna tincidunt. Morbi sagittis dolor et massa
+              consequat, ac vehicula nunc faucibus. Nullam vitae sapien sit amet
+              tortor suscipit dignissim.
+            </p>
+
+            <!-- Imagen secundaria -->
+            <div
+              class="mt-8 aspect-[16/9] rounded-2xl overflow-hidden shadow-lg"
+            >
+              <img
+                src="/nails/store-manicure.webp"
+                alt="Detalle de herramientas de trabajo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: EL SACRIFICIO -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-stone-100/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="font-edwardian text-5xl md:text-6xl text-stone-800 mb-6">
+            Los años que no se ven
+          </h2>
+          <div class="w-24 h-1 bg-rose-300 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+          <!-- Columna 1 -->
+          <div class="space-y-4">
+            <p class="text-base md:text-lg text-stone-700 leading-relaxed">
+              Pellentesque habitant morbi tristique senectus et netus et
+              malesuada fames ac turpis egestas. Maecenas pharetra convallis
+              posuere morbi leo urna molestie at elementum. Consequat nisl vel
+              pretium lectus quam id leo in vitae.
+            </p>
+            <p class="text-base md:text-lg text-stone-700 leading-relaxed">
+              Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc.
+              Egestas sed sed risus pretium quam vulputate dignissim suspendisse
+              in. Arcu dui vivamus arcu felis bibendum ut tristique et egestas.
+            </p>
+          </div>
+
+          <!-- Columna 2 -->
+          <div class="space-y-4">
+            <p class="text-base md:text-lg text-stone-700 leading-relaxed">
+              Sagittis vitae et leo duis ut diam quam nulla. Tellus elementum
+              sagittis vitae et leo duis ut. Neque convallis a cras semper
+              auctor neque vitae tempus quam. Ultrices tincidunt arcu non
+              sodales neque sodales.
+            </p>
+            <p class="text-base md:text-lg text-stone-700 leading-relaxed">
+              Dignissim suspendisse in est ante in nibh mauris cursus mattis.
+              Molestie at elementum eu facilisis sed odio morbi quis. Turpis
+              egestas sed tempus urna et pharetra.
+            </p>
+          </div>
+        </div>
+
+        <!-- Imagen ambiental -->
+        <div
+          class="mt-12 aspect-[21/9] rounded-2xl overflow-hidden shadow-lg opacity-90"
+        >
+          <img
+            src="/nails/store-hair.webp"
+            alt="Salón con luz natural"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: LAS PERSONAS -->
+    <section class="py-20 px-4 md:px-8 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <div
+          class="bg-gradient-to-br from-rose-50 to-amber-50/40 rounded-3xl p-8 md:p-12 lg:p-16 shadow-lg"
+        >
+          <div class="max-w-3xl mx-auto space-y-8">
+            <div class="text-center">
+              <h2
+                class="font-edwardian text-5xl md:text-6xl text-stone-800 mb-6"
+              >
+                Más que uñas
+              </h2>
+              <div class="w-24 h-1 bg-rose-300 mx-auto mb-8"></div>
+            </div>
+
+            <p
+              class="text-base md:text-lg text-stone-700 leading-relaxed text-center"
+            >
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+
+            <p
+              class="text-base md:text-lg text-stone-700 leading-relaxed text-center"
+            >
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum. Sed ut perspiciatis
+              unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium.
+            </p>
+
+            <!-- Imagen cercana -->
+            <div
+              class="mt-10 aspect-[16/10] rounded-2xl overflow-hidden shadow-lg"
+            >
+              <img
+                src="/nails/store-colors-manicure.webp"
+                alt="Gesto de cercanía y cuidado"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: FORMA DE TRABAJAR -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="font-edwardian text-5xl md:text-6xl text-stone-800 mb-6">
+            Mi manera de hacer las cosas
+          </h2>
+          <div class="w-24 h-1 bg-rose-300 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+          <!-- Valor 1 -->
+          <div class="space-y-3">
+            <div
+              class="w-12 h-12 rounded-full bg-rose-100 flex items-center justify-center mb-4"
+            >
+              <span class="text-2xl">✦</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-semibold text-stone-800">
+              Lorem ipsum dolor
+            </h3>
+            <p class="text-base text-stone-600 leading-relaxed">
+              Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+              gravida.
+            </p>
+          </div>
+
+          <!-- Valor 2 -->
+          <div class="space-y-3">
+            <div
+              class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mb-4"
+            >
+              <span class="text-2xl">✧</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-semibold text-stone-800">
+              Risus commodo viverra
+            </h3>
+            <p class="text-base text-stone-600 leading-relaxed">
+              Maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin
+              aliquam ultrices sagittis orci a scelerisque purus semper.
+            </p>
+          </div>
+
+          <!-- Valor 3 -->
+          <div class="space-y-3">
+            <div
+              class="w-12 h-12 rounded-full bg-rose-100 flex items-center justify-center mb-4"
+            >
+              <span class="text-2xl">✵</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-semibold text-stone-800">
+              Eget magna fermentum
+            </h3>
+            <p class="text-base text-stone-600 leading-relaxed">
+              Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu
+              ac tortor dignissim convallis aenean et tortor.
+            </p>
+          </div>
+
+          <!-- Valor 4 -->
+          <div class="space-y-3">
+            <div
+              class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mb-4"
+            >
+              <span class="text-2xl">✹</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-semibold text-stone-800">
+              At varius vel pharetra
+            </h3>
+            <p class="text-base text-stone-600 leading-relaxed">
+              Vel pharetra vel turpis nunc eget lorem dolor sed viverra. Nibh
+              venenatis cras sed felis eget velit aliquet sagittis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: SENTIDO Y PROPÓSITO -->
+    <section
+      class="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-[#faf8f6] to-[#f5f1ed] relative overflow-hidden"
+    >
+      <!-- Decoración de fondo -->
+      <div class="absolute inset-0 opacity-30">
+        <div
+          class="absolute top-1/4 left-1/4 w-64 h-64 bg-rose-200 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-amber-100 rounded-full blur-3xl"
+        >
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto text-center relative z-10">
+        <h2
+          class="font-edwardian text-5xl md:text-6xl lg:text-7xl text-stone-800 mb-8 leading-tight"
+        >
+          El por qué de todo esto
+        </h2>
+        <div class="w-24 h-1 bg-rose-300 mx-auto mb-12"></div>
+
+        <div class="space-y-6">
+          <p class="text-lg md:text-xl text-stone-700 leading-relaxed">
+            At tempor commodo ullamcorper a lacus vestibulum sed arcu non. Diam
+            quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+            Tellus cras adipiscing enim eu turpis egestas pretium aenean
+            pharetra.
+          </p>
+          <p class="text-lg md:text-xl text-stone-700 leading-relaxed">
+            Magna ac placerat vestibulum lectus mauris ultrices eros in cursus.
+            Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper
+            malesuada.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-stone-50">
+      <div class="max-w-3xl mx-auto text-center space-y-8">
+        <blockquote
+          class="text-2xl md:text-3xl font-light text-stone-800 leading-relaxed italic"
+        >
+          "Auctor augue mauris augue neque gravida in fermentum. Sed vulputate
+          odio ut enim blandit volutpat maecenas volutpat."
+        </blockquote>
+
+        <div class="pt-8">
+          <p class="font-edwardian text-4xl md:text-5xl text-stone-800 mb-2">
+            Paula
+          </p>
+          <p
+            class="text-sm md:text-base text-stone-500 tracking-wider uppercase"
+          >
+            Paula Nails · Alcalá de Henares
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Tipografía Edwardian ya definida globalmente */
+
+  /* Transiciones suaves */
+  section {
+    animation: fadeIn 0.6s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Espaciado consistente */
+  p + p {
+    margin-top: 1rem;
+  }
+</style>
