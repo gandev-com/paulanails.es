@@ -1,117 +1,104 @@
-import React, { useState } from "react";
+import React from "react";
 
-const CategoryIcons = {
-  "AI-Agent/ML": (
-     <img
-            src={`/page_svg/ai-platform.svg`}
-            alt={"AI Platform"}
-            className="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
-            width="30"
-            height="30"
-            loading="lazy"
-          />
-   
-  ),
-  "Web Development": (
-     <img
-            src={`/page_svg/web-development.svg`}
-            alt={"Web Development"}
-            className="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
-            width="30"
-            height="30"
-            loading="lazy"
-          />
-  ),
-  "Cloud Computing": (
-      <img
-            src={`/page_svg/cloud.svg`}
-            alt={"Cloud Computing"}
-            className="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
-            width="30"
-            height="30"
-            loading="lazy"
-          />
-  ),
-};
+const services = [
+  {
+    icon: "/svg/manicura.svg",
+    title: "Manicura",
+    description: "Cuidado completo de manos con diseños personalizados",
+  },
+  {
+    icon: "/svg/pedicura.svg",
+    title: "Pedicura",
+    description: "Tratamiento profesional para tus pies",
+  },
+  {
+    icon: "/svg/masajes.svg",
+    title: "Masajes",
+    description: "Relajación y bienestar corporal",
+  },
+  {
+    icon: "/svg/laser.svg",
+    title: "Láser",
+    description: "Depilación láser con tecnología avanzada",
+  },
+  {
+    icon: "/svg/peluqueria.svg",
+    title: "Peluquería",
+    description: "Corte, peinado y tratamientos capilares",
+  },
+  {
+    icon: "/svg/terapias.svg",
+    title: "Terapias",
+    description: "Tratamientos de belleza y bienestar",
+  },
+];
 
 const SkillsList = () => {
-  const [openItem, setOpenItem] = useState<string | null>(null);
-
-  const skills = {
-"AI-Agent/ML": [
-  "Integration of AI agents and machine learning models into backend systems",
-  "Building APIs for AI-driven applications",
-  "Automation of workflows using AI and data processing"
-],
-"Web Development": [
-  "Design and implementation of RESTful and GraphQL APIs",
-  "Scalable server-side architecture using Node.js, Python, or Go",
-  "Database design and optimization (SQL & NoSQL)"
-],
-"Cloud Computing": [
-  "Cloud infrastructure deployment with AWS, Azure, or GCP",
-  "Containerization and orchestration with Docker & Kubernetes",
-  "CI/CD pipelines and backend monitoring for high availability"
-]
-  };
-
-  const toggleItem = (item: string) => {
-    setOpenItem(openItem === item ? null : item);
-  };
-
   return (
-    <div className="text-left pt-3 md:pt-9">
-      <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">
-        What I do?
-      </h3>
-      <ul className="space-y-4 mt-4 text-lg">
-        {Object.entries(skills).map(([category, items]) => (
-          <li key={category} className="w-full">
+    <div className="text-left">
+     
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {/* Primeros 5 servicios */}
+        {services.slice(0, 5).map((service, index) => (
+          <div
+            key={index}
+            className="rounded-[24px] h-[200px] md:h-[240px] shadow-lg relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+            style={{ backgroundColor: "var(--background)" }}
+          >
+            {/* Gradiente con clip-path minimalista */}
             <div
-              onClick={() => toggleItem(category)}
-              className="md:w-[400px] w-full bg-[var(--bg-icon)] rounded-2xl text-left hover:bg-opacity-80 transition-all border border-[var(--white-icon-tr)] cursor-pointer overflow-hidden"
-            >
-              <div className="flex items-center gap-3 p-4">
-                {CategoryIcons[category]}
-                <div className="flex items-center gap-2 flex-grow justify-between">
-                  <div className="min-w-0 max-w-[200px] md:max-w-none overflow-hidden">
-                    <span className="block truncate text-[var(--white)] text-lg">
-                      {category}
-                    </span>
-                  </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className={`w-6 h-6 text-[var(--white)] transform transition-transform flex-shrink-0 ${
-                      openItem === category ? "rotate-180" : ""
-                    }`}
-                  >
-                    <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
-                  </svg>
-                </div>
-              </div>
+              className="absolute inset-0 rounded-[24px] z-0 transition-opacity group-hover:opacity-90"
+              style={{
+                background:
+                  "linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink))",
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%)",
+              }}
+            />
 
-              <div
-                className={`transition-all duration-300 px-4 ${
-                  openItem === category
-                    ? "max-h-[500px] pb-4 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <ul className="space-y-2 text-[var(--white-icon)] text-sm">
-                  {items.map((item, index) => (
-                    <div key={index} className="flex items-center">
-                      <span className="pl-1">•</span>
-                      <li className="pl-3">{item}</li>
-                    </div>
-                  ))}
-                </ul>
+            {/* Área de imagen placeholder (cuando tengas las fotos) */}
+            <div
+              className="absolute top-0 right-0 rounded-tr-[24px] overflow-hidden z-10 opacity-20 group-hover:opacity-30 transition-opacity"
+              style={{ width: "60%", height: "60%" }}
+            >
+              <div className="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                <img src={service.icon} alt={service.title} className="w-16 h-16 object-contain" />
               </div>
             </div>
-          </li>
+
+            {/* Contenido del servicio */}
+            <div className="absolute bottom-3 left-3 z-20 flex flex-col gap-1">
+              <h4 className="text-[var(--white)] text-xl md:text-2xl font-semibold">
+                {service.title}
+              </h4>
+              <p className="text-[var(--white-icon)] text-sm">
+                {service.description}
+              </p>
+            </div>
+
+            {/* Icono en esquina superior izquierda */}
+            <div className="absolute top-3 left-3 z-20 transition-transform group-hover:scale-110">
+              <img src={service.icon} alt={service.title} className="w-8 h-8 object-contain" />
+            </div>
+          </div>
         ))}
-      </ul>
+
+        {/* Card 6: Ver todos los servicios - Estilo Nav Button */}
+        <a
+          href="/servicios"
+          className="rounded-[24px] h-[200px] md:h-[240px] shadow-lg flex items-center justify-center text-center transition-all hover:shadow-xl"
+          style={{ backgroundColor: "var(--bento-pink-light)" }}
+        >
+          <div className="px-6">
+            <div className="text-5xl mb-4">✨</div>
+            <span className="text-[var(--white)] font-semibold text-xl md:text-2xl block mb-2">
+              Ver Todos los Servicios
+            </span>
+            <p className="text-[var(--white-icon)] text-sm">
+              Descubre más opciones
+            </p>
+          </div>
+        </a>
+      </div>
     </div>
   );
 };

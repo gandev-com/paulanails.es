@@ -1,40 +1,108 @@
 ---
-const technologies = [
-  //AI/ML
-  "peluqueria",
-  "manicura",
-  "peinados",
-  //Languages
-  "peluqueria",
-  "manicura",
-  "peinados",
+// Productos que usamos (se muestran en el carousel)
+const productBrands = [
+  // Peluquería Profesional (Productos)
+  { name: "echosline", displayName: "Echosline", category: "Peluquería" },
+  { name: "kerastase", displayName: "Kérastase", category: "Peluquería" },
+  // {
+  //   name: "kerantin",
+  //   displayName: "Kerantin Structure",
+  //   category: "Peluquería",
+  // },
+  { name: "loreal", displayName: "L'Oréal", category: "Peluquería" },
+  { name: "olaplex", displayName: "Olaplex", category: "Peluquería" },
+  // { name: "salerm", displayName: "Salerm", category: "Peluquería" },
+  // { name: "schwarzkopf", displayName: "Schwarzkopf", category: "Peluquería" },
+  //{ name: "sebastian", displayName: "Sebastian", category: "Peluquería" },
+  //{ name: "stage", displayName: "Stage", category: "Peluquería" },
+  { name: "wella", displayName: "Wella", category: "Peluquería" },
+  { name: "revlon", displayName: "Revlon", category: "Peluquería" },
+  { name: "arual", displayName: "Arual", category: "Peluquería" },
+  { name: "bbcos", displayName: "BBcos", category: "Peluquería" },
 
-  //Databases
-  "peluqueria",
-  "manicura",
-  "peinados",
+  // Estética y Cosmética
+  //{ name: "dorleac", displayName: "Dorleac", category: "Estética" }, // no svh
+  //{ name: "levissime", displayName: "Levissime", category: "Estética" },
+  { name: "ziaja", displayName: "Ziaja", category: "Estética" },
+  { name: "medisana", displayName: "Medisana", category: "Estética" },
 
-  "peluqueria",
-  "manicura",
-  "peinados",
+  // Uñas
+  { name: "glaze", displayName: "Glaze", category: "Uñas" },
+  { name: "thuya", displayName: "Thuya Vendetta", category: "Uñas" },
+  { name: "andreia", displayName: "Andreia Professional", category: "Uñas" },
+  { name: "masglo", displayName: "Masglo", category: "Uñas" },
+  { name: "tammy-taylor", displayName: "Tammy Taylor Nails", category: "Uñas" },
 
-  //OS
-  "peluqueria",
-  "manicura",
-  "peinados",
+  // Depilación
+  //{ name: "starpil", displayName: "Starpil", category: "Depilación" }, // no svg
 
-  //Frameworks/Libraries
-  "peluqueria",
-  "manicura",
-  "peinados",
+  // Extensiones y Posticería
+  //{ name: "hair-plus", displayName: "Hair Plus", category: "Extensiones" },
+  { name: "liam-hair", displayName: "Liam Hair", category: "Extensiones" },
 
-  //DevOps
-  "peluqueria",
-  "manicura",
-  "peluqueria",
-  "peinados",
+  // Otras marcas profesionales
+  //{ name: "alba", displayName: "Alba", category: "Profesional" },
+  //{ name: "abadia", displayName: "Abadía", category: "Profesional" },
+  //{ name: "abra", displayName: "Abra", category: "Profesional" },
+  { name: "belkos", displayName: "Belkos", category: "Profesional" },
+  //{ name: "deliplas", displayName: "Deliplas", category: "Profesional" },
+  { name: "egalle", displayName: "Egalle", category: "Profesional" },
+  //{ name: "irridiance", displayName: "Irridiance", category: "Profesional" },
+  //{ name: "nievel", displayName: "Nievel", category: "Profesional" },
+  //{ name: "platinium", displayName: "Platinium", category: "Profesional" },
+  // {
+  //   name: "romeo-julieta",
+  //   displayName: "Romeo Julieta",
+  //   category: "Profesional",
+  // },
+  //{ name: "sunlake", displayName: "Sunlake", category: "Profesional" },
 ];
+
+// Herramientas y accesorios (guardados para contexto en servicios)
+const toolsBrands = [
+  // Herramientas Eléctricas
+  { name: "moser", displayName: "Moser", category: "Herramientas" },
+  { name: "panasonic", displayName: "Panasonic", category: "Herramientas" },
+  { name: "parlux", displayName: "Parlux", category: "Herramientas" },
+  { name: "sirvel", displayName: "Sirvel", category: "Herramientas" },
+  { name: "techline", displayName: "Techline", category: "Herramientas" },
+  { name: "wahl", displayName: "WAHL", category: "Herramientas" },
+
+  // Utensilios y Accesorios
+  { name: "eurostil", displayName: "Eurostil", category: "Accesorios" },
+  { name: "termix", displayName: "Termix", category: "Accesorios" },
+  { name: "sivel", displayName: "Sivel", category: "Accesorios" },
+  {
+    name: "perfect-beauty",
+    displayName: "Perfect Beauty",
+    category: "Accesorios",
+  },
+  { name: "3-claveles", displayName: "3 Claveles", category: "Accesorios" },
+  { name: "plasticaps", displayName: "Plasticaps", category: "Accesorios" },
+
+  // Barbería
+  { name: "filarmonica", displayName: "Filarmónica", category: "Barbería" },
+];
+
+// Exportar ambos arrays para uso en otros componentes
+export { productBrands, toolsBrands };
+
+const brands = productBrands; // Para el carousel actual
 ---
+
+<!-- Separador superior -->
+<div class="flex justify-center mb-8">
+  <div
+    class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-black to-transparent opacity-20"
+  >
+  </div>
+</div>
+
+<div class="text-center mb-6">
+  <h3 class="text-[var(--white)] text-2xl md:text-3xl font-semibold">
+    Marcas con las que trabajamos
+  </h3>
+</div>
 
 <div class="relative overflow-x-hidden py-8">
   <div
@@ -48,18 +116,22 @@ const technologies = [
 
   <div class="flex animate-scroll hover:animate-paused gap-12 md:gap-20 w-max">
     {
-      [...technologies, ...technologies, ...technologies].map((tech) => (
-        <div class="flex items-center gap-2 group transition-all duration-300">
-          <img
-            src={`/svg/${tech}.svg`}
-            alt={tech}
-            class="h-14 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
-            width="60"
-            height="60"
-            loading="lazy"
-          />
-          <span class="text-lg font-medium text-[var(--white-icon)]">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
+      [...brands, ...brands].map((brand) => (
+        <div class="flex flex-col items-center gap-3 group transition-all duration-300">
+          <div class="px-6 py-4 rounded-2xl transition-all group-hover:scale-110 flex items-center justify-center w-[140px] h-[60px]">
+            <img
+              src={`/svg/${brand.name}.svg`}
+              alt={brand.displayName}
+              class="max-w-full max-h-full object-contain transition-transform"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span class="text-lg font-semibold text-[var(--white)] hidden">
+              {brand.displayName}
+            </span>
+          </div>
+          <span class="text-xs text-[var(--white-icon)] opacity-70">
+            {brand.category}
           </span>
         </div>
       ))
@@ -82,7 +154,7 @@ const technologies = [
 
   @media (min-width: 768px) {
     .animate-scroll {
-      animation-duration: 50s;
+      animation-duration: 60s;
     }
   }
 </style>
