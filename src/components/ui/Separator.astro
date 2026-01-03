@@ -1,0 +1,20 @@
+---
+interface Props {
+  spacing?: "sm" | "md" | "lg";
+}
+
+const { spacing = "md" } = Astro.props;
+
+const spacingClasses = {
+  sm: "my-8 md:my-10",
+  md: "my-12 md:my-16",
+  lg: "my-16 md:my-20",
+};
+---
+
+<div class={`flex justify-center ${spacingClasses[spacing]}`}>
+  <div
+    class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-black to-transparent opacity-20"
+  >
+  </div>
+</div>

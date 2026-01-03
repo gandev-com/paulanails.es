@@ -67,7 +67,7 @@ const SkillsList = () => {
 
             {/* Contenido del servicio */}
             <div className="absolute bottom-3 left-3 z-20 flex flex-col gap-1">
-              <h4 className="text-[var(--white)] text-xl md:text-2xl font-semibold">
+              <h4 className="font-edwardian text-[var(--white)] text-3xl md:text-4xl">
                 {service.title}
               </h4>
               <p className="text-[var(--white-icon)] text-sm">
