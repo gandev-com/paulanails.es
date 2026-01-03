@@ -3,155 +3,164 @@ import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
 ---
 
-<section class="text-[var(--white)] mt-24 md:mt-0" id="home">
-  <div class="min-h-screen py-8 md:py-12 lg:py-16">
-    <!-- Main Bento Container -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div
-        class="bg-[var(--background)] rounded-[32px] shadow-2xl shadow-pink-200/30 p-6 md:p-10 lg:p-12"
-      >
-        <!-- Hero Section - Grid Principal -->
-        <section class="mb-12 md:mb-16">
-          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-8">
-            <!-- Left Column - Title & Info -->
-            <div class="flex flex-col justify-between">
-              <!-- Description Box -->
-              <div class="mt-6">
-                <div
-                  class="rounded-[24px] p-6 md:p-8"
-                  style="background-color: var(--bento-pink-light);"
-                >
-                  <div>
-                    <h1
-                      class="text-[var(--white)] text-6xl md:text-6xl lg:text-8xl font-medium text-pretty leading-tight mb-6"
-                    >
-                      Paula <br />
-                      <span class="ml-14 md:ml-28 font-edwardian">Nails</span>
-                    </h1>
-                  </div>
+<section class="text-[var(--white)]" id="home">
+  <!-- Hero Section - Full Width con Parallax -->
+  <div class="relative w-full h-[70vh] overflow-hidden">
+    <!-- Background Slider con Parallax -->
+    <div class="hero-background absolute inset-0 w-full h-full">
+      <div class="slider-container relative w-full h-full">
+        <img
+          src="/nails/store-colors-manicure.webp"
+          alt="Tienda Paula Nails 1"
+          class="slider-image absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
+        />
+        <img
+          src="/nails/store-hair.webp"
+          alt="Tienda Paula Nails 2"
+          class="slider-image absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0"
+        />
+        <img
+          src="/nails/store-colors-manicure.webp"
+          alt="Tienda Paula Nails 3"
+          class="slider-image absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0"
+        />
+        <img
+          src="/nails/store-manicure.webp"
+          alt="Tienda Paula Nails 4"
+          class="slider-image absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0"
+        />
+      </div>
+      <!-- Overlay oscuro para mejor contraste -->
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
 
-                  <h1
-                    class="text-[var(--white)] text-base md:text-lg leading-relaxed text-end"
-                  >
-                    <span class="shiny-sec rotating-text font-semibold text-end"
-                    ></span>
-                  </h1>
-                  <p class="text-[var(--white)] mt-3 text-sm md:text-base">
-                    Experta en diseño de uñas con técnicas profesionales.
-                    Creando arte en tus manos con los mejores productos del
-                    mercado.
-                  </p>
-                </div>
-              </div>
-            </div>
+    <!-- Contenido del Hero centrado -->
+    <div
+      class="hero-content relative z-10 flex items-center justify-center h-[70vh]"
+    >
+      <div class="text-center max-w-4xl mx-auto">
+        <!-- Logo Principal -->
+        <h1
+          class="text-white text-7xl md:text-8xl lg:text-9xl font-medium text-pretty leading-tight mb-6"
+        >
+          Paula <br />
+          <span class="font-edwardian">Nails</span>
+        </h1>
 
-            <!-- Right Column - Image Gallery -->
-            <div
-              class="rounded-[28px] h-64 md:h-80 lg:h-full min-h-[400px] shadow-lg relative overflow-hidden"
-              style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink));"
+        <!-- Texto rotativo shiny -->
+        <h2
+          class="text-white text-xl md:text-2xl lg:text-3xl leading-relaxed mb-8"
+        >
+          <span class="shiny-sec rotating-text font-semibold"></span>
+        </h2>
+
+        <!-- Descripción -->
+        <p
+          class="text-white text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Experta en diseño de uñas con técnicas profesionales. Creando arte en
+          tus manos con los mejores productos del mercado.
+        </p>
+
+        <!-- Social Icons & CTA Button -->
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <div class="flex gap-2">
+            <a
+              target="_blank"
+              href="https://github.com/Gan-dev"
+              aria-label="Instagram"
+              style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink-light);"
+              class="hover:text-white transition duration-300 ease-in-out border border-1 p-2 md:p-3 rounded-xl"
+              onmouseover="this.style.backgroundColor='var(--bento-pink)'"
+              onmouseout="this.style.backgroundColor='var(--bento-pink-light)'"
             >
-              <div
-                class="slider-container relative w-full h-full bg-white/5 backdrop-blur-sm"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+                ></rect><path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"
+                ></line></svg
               >
-                <img
-                  src="/nails/nails-1.webp"
-                  alt="Paula Nails 1"
-                  class="slider-image absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 rounded-[28px]"
-                />
-                <img
-                  src="/nails/nails-2.jpeg"
-                  alt="Paula Nails 2"
-                  class="slider-image absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0 rounded-[28px]"
-                />
-                <img
-                  src="/nails/nails-3.jpeg"
-                  alt="Paula Nails 3"
-                  class="slider-image absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0 rounded-[28px]"
-                />
-                <img
-                  src="/nails/nails-4.jpeg"
-                  alt="Paula Nails 4"
-                  class="slider-image absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0 rounded-[28px]"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- CTA Buttons & Social -->
-          <div
-            class="flex flex-col sm:flex-row gap-4 justify-between items-center"
-          >
-            <div class="flex gap-2">
-              <a
-                target="_blank"
-                href="https://github.com/Gan-dev"
-                aria-label="Instagram"
-                style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink-light);"
-                class="hover:text-white transition duration-300 ease-in-out border border-1 p-2 md:p-3 rounded-xl"
-                onmouseover="this.style.backgroundColor='var(--bento-pink)'"
-                onmouseout="this.style.backgroundColor='var(--bento-pink-light)'"
+            </a>
+            <a
+              target="_blank"
+              href="https://github.com/Gan-dev"
+              aria-label="Instagram"
+              style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink-light);"
+              class="hover:text-white transition duration-300 ease-in-out border border-1 p-3 md:p-4 rounded-xl backdrop-blur-sm"
+              onmouseover="this.style.backgroundColor='var(--bento-pink)'"
+              onmouseout="this.style.backgroundColor='var(--bento-pink-light)'"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+                ></rect><path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"
+                ></line></svg
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
-                  ></rect><path
-                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                  ></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"
-                  ></line></svg
-                >
-              </a>
-
-              <a
-                target="_blank"
-                href="https://wa.me/1234567890"
-                aria-label="WhatsApp"
-                style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink-light);"
-                class="hover:text-white transition duration-300 ease-in-out border border-1 p-2 md:p-3 rounded-xl"
-                onmouseover="this.style.backgroundColor='var(--bento-pink)'"
-                onmouseout="this.style.backgroundColor='var(--bento-pink-light)'"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
-                  ></path>
-                </svg>
-              </a>
-            </div>
+            </a>
 
             <a
-              href="#contact"
-              style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink);"
-              class="px-8 py-4 rounded-full font-semibold text-base hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
-              onmouseover="this.style.backgroundColor='var(--bento-pink-dark)'"
-              onmouseout="this.style.backgroundColor='var(--bento-pink)'"
+              target="_blank"
+              href="https://wa.me/1234567890"
+              aria-label="WhatsApp"
+              style="color: var(--white-icon); border-color: var(--white-icon-tr); background-color: var(--bento-pink-light);"
+              class="hover:text-white transition duration-300 ease-in-out border border-1 p-3 md:p-4 rounded-xl backdrop-blur-sm"
+              onmouseover="this.style.backgroundColor='var(--bento-pink)'"
+              onmouseout="this.style.backgroundColor='var(--bento-pink-light)'"
             >
-              Agendar cita
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                ></path>
+              </svg>
             </a>
           </div>
-        </section>
 
-        <!-- Separador -->
-        <div class="flex justify-center my-12 md:my-16">
-          <div
-            class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-black to-transparent opacity-20"
+          <a
+            href="#contact"
+            style="color: var(--white); background-color: var(--bento-pink);"
+            class="px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transform hover:scale-105 transition-all backdrop-blur-sm"
+            onmouseover="this.style.backgroundColor='var(--bento-pink-dark)'"
+            onmouseout="this.style.backgroundColor='var(--bento-pink)'"
           >
-          </div>
+            Agendar cita
+          </a>
         </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Content Section con fondo -->
+  <div class="bg-[var(--background)] py-12 md:py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-[var(--background)] rounded-[32px] p-6 md:p-10 lg:p-12">
         <!-- Logos Section -->
         <section class="mb-12 md:mb-16">
           <LogoWall />
@@ -207,7 +216,7 @@ import SkillsList from "../React/SkillsList.tsx";
                     📍 Visítanos
                   </h4>
                   <p class="text-[var(--white-icon)] text-sm mt-2">
-                    Calle Licenciado de Madrid Local 10<br/>
+                    Calle Licenciado de Madrid Local 10<br />
                     Alcalá de Henares, Madrid
                   </p>
                 </div>
@@ -225,7 +234,6 @@ import SkillsList from "../React/SkillsList.tsx";
                 </div>
               </div>
             </div>
-
           </div>
 
           <!-- CTA Card -->
@@ -239,7 +247,8 @@ import SkillsList from "../React/SkillsList.tsx";
               💅 ¿Tienes dudas sobre nuestros servicios?
             </p>
             <p class="text-[var(--white-icon)] text-sm mb-4">
-              Contáctanos y te asesoraremos para elegir el tratamiento perfecto para ti. ¡Agenda tu cita ahora!
+              Contáctanos y te asesoraremos para elegir el tratamiento perfecto
+              para ti. ¡Agenda tu cita ahora!
             </p>
             <a
               href="#contact"
@@ -255,7 +264,13 @@ import SkillsList from "../React/SkillsList.tsx";
   </div>
 
   <style is:global>
-    /* Borde negro fino para párrafos */
+    /* Parallax effect for hero background */
+    .hero-background {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    /* Text shadow para mejor legibilidad */
     p {
       text-shadow: 0 0 2.3px rgba(255, 255, 255, 0.6);
     }
@@ -299,6 +314,18 @@ import SkillsList from "../React/SkillsList.tsx";
   </style>
 
   <script>
+    // Efecto Parallax en el Hero
+    window.addEventListener("scroll", () => {
+      const heroBackground = document.querySelector(
+        ".hero-background"
+      ) as HTMLElement;
+      if (heroBackground) {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.5; // Velocidad del parallax
+        heroBackground.style.transform = `translate3d(0, ${rate}px, 0)`;
+      }
+    });
+
     // Slider automático de imágenes
     const sliderImages =
       document.querySelectorAll<HTMLElement>(".slider-image");
@@ -311,8 +338,8 @@ import SkillsList from "../React/SkillsList.tsx";
         sliderImages[currentSlide].style.opacity = "1";
       }
 
-      // Cambiar imagen cada 3 segundos
-      setInterval(nextSlide, 3000);
+      // Cambiar imagen cada 4 segundos
+      setInterval(nextSlide, 4000);
     }
 
     // Texto rotativo con efecto typewriter
