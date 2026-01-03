@@ -1,6 +1,7 @@
 ---
 import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
+import Testimonials from "../components/testimonials.astro";
 ---
 
 <section class="text-[var(--white)]" id="home">
@@ -202,71 +203,9 @@ import SkillsList from "../React/SkillsList.tsx";
           </div>
         </div>
 
-        <!-- Contact Section -->
-        <h3
-          class="text-[var(--white)] text-3xl md:text-4xl font-semibold mb-6 md:mb-8"
-        >
-          Contáctanos
-        </h3>
-
-        <section class="grid lg:grid-cols-2 gap-6 md:gap-8">
-          <!-- Map Card -->
-          <div class="flex flex-col gap-6 h-full">
-            <!-- Map Card -->
-            <div
-              class="rounded-[24px] p-6 relative overflow-hidden group flex-grow"
-              style="background: linear-gradient(to bottom right, var(--bento-pink-light), var(--bento-pink));"
-            >
-              <div class="h-full flex flex-col gap-4">
-                <div class="text-center mb-2">
-                  <h4
-                    class="text-[var(--white)] text-xl md:text-2xl font-semibold"
-                  >
-                    📍 Visítanos
-                  </h4>
-                  <p class="text-[var(--white-icon)] text-sm mt-2">
-                    Calle Licenciado de Madrid Local 10<br />
-                    Alcalá de Henares, Madrid
-                  </p>
-                </div>
-
-                <!-- Google Maps Embed -->
-                <div class="flex-1 rounded-[16px] overflow-hidden shadow-lg">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.4586611682744!2d-3.703790484546659!3d40.41677597936277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42288a0f1c4d6f%3A0x85e47b7d1e6f1a1!2sMadrid%2C%20Spain!5e0!3m2!1sen!2ses!4v1609459200000!5m2!1sen!2ses"
-                    width="100%"
-                    height="100%"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- CTA Card -->
-          <div
-            class="rounded-[24px] p-6 text-center flex flex-col justify-center"
-            style="background-color: var(--bento-pink-light);"
-          >
-            <p
-              class="text-[var(--white)] font-semibold text-base md:text-lg mb-3"
-            >
-              💅 ¿Tienes dudas sobre nuestros servicios?
-            </p>
-            <p class="text-[var(--white-icon)] text-sm mb-4">
-              Contáctanos y te asesoraremos para elegir el tratamiento perfecto
-              para ti. ¡Agenda tu cita ahora!
-            </p>
-            <a
-              href="#contact"
-              class="inline-block px-6 py-2.5 rounded-full font-medium text-sm transition-all hover:shadow-lg transform hover:scale-105"
-              style="background-color: var(--sec); color: var(--white);"
-            >
-              Agenda tu cita
-            </a>
-          </div>
+        <!-- Testimonials Section -->
+        <section class="mb-12 md:mb-16">
+          <Testimonials />
         </section>
       </div>
     </div>

@@ -1,155 +1,236 @@
 ---
-import LikeButton from "../React/LikeButton.tsx";
+// Footer component
 ---
 
 <footer class="w-full py-12 border-t border-[#ffffff10]">
-  <div class="max-w-5xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
-      <div class="flex flex-col items-center space-y-6 gap-9">
-        <div class="flex space-x-6 sm:space-x-8">
-          {
-            [
-              {
-                href: "https://github.com/Gan-dev",
-                icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>',
-                label: "GitHub",
-              },
-              {
-                href: "https://www.linkedin.com/in/gustavo-cevallos-web-developer/",
-                icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"></path></svg>',
-                label: "LinkedIn",
-              },
-              {
-                href: "https://mail.google.com/mail/?view=cm&fs=1&to=gandev.com@gmail.com&su=Hey%20Gustavo!",
-                icon: '<svg xmlns="http://www.w3.org/2000/svg" width="2.1em" height="2.1em" viewBox="0 0 24 24"><path fill="currentColor" d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"/></svg>',
-                label: "Email",
-              },
-            ].map((link) => (
-              <a
-                href={link.href}
-                target="_blank"
-                class="flex flex-col items-center group"
-                aria-label={link.label}
-              >
-                <div class="text-[var(--white-icon)] hover:text-[var(--white)] transition duration-300 ease-in-out">
-                  <div set:html={link.icon} />
-                </div>
-              </a>
-            ))
-          }
-        </div>
-
-        <!-- CV Download Buttons -->
-        <div id="cv" class="flex flex-col gap-3 w-full max-w-xs">
-          <p
-            class="text-[var(--white-icon)] text-sm text-center font-medium mb-1"
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <!-- Columna 1: Sobre Paula Nails -->
+      <div class="space-y-4">
+        <h3 class="text-[var(--white)] text-lg font-semibold font-edwardian">
+          Paula Nails
+        </h3>
+        <p class="text-[var(--white-icon)] text-sm leading-relaxed">
+          Centro de estética especializado en diseño de uñas y cuidado personal
+          en Alcalá de Henares.
+        </p>
+        <div class="flex gap-4">
+          <a
+            href="https://instagram.com/paulanails"
+            target="_blank"
+            aria-label="Instagram"
+            class="text-[var(--white-icon)] hover:text-[var(--sec)] transition duration-300"
           >
-            Download CV
-          </p>
-          <div class="flex gap-3">
-            <a
-              href="/cv-es.pdf"
-              download="Gustavo_Cevallos_CV_ES.pdf"
-              class="group flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--bg-icon)] hover:bg-[#2bc5c8] text-[var(--background)] font-medium transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[var(--sec)]/20"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="w-5 h-5 transition-transform group-hover:translate-y-0.5"
-              >
-                <path
-                  d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z"
-                ></path>
-              </svg>
-              <span class="text-sm">ES</span>
-            </a>
-
-            <a
-              href="/cv-en.pdf"
-              download="Gustavo_Cevallos_CV_EN.pdf"
-              class="group flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--bg-icon)] hover:bg-[#2bc5c8] text-[var(--background)] font-medium transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[var(--sec)]/20"
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a
+            href="https://wa.me/1234567890"
+            target="_blank"
+            aria-label="WhatsApp"
+            class="text-[var(--white-icon)] hover:text-[var(--sec)] transition duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="w-5 h-5 transition-transform group-hover:translate-y-0.5"
-              >
-                <path
-                  d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z"
-                ></path>
-              </svg>
-              <span class="text-sm">EN</span>
-            </a>
-          </div>
-        </div>
-
-        <LikeButton client:load />
-      </div>
-      <div class="flex flex-col items-center space-y-6">
-        <div class="grid grid-cols-1 gap-3 w-full max-w-xs py-6">
-          {
-            [
-              {
-                desc: "Built with",
-                name: "Astro",
-                icon: "/svg/astro.svg",
-                alt: "Astro Logo",
-              },
-              {
-                desc: "Styled with",
-                name: "TailwindCSS",
-                icon: "/svg/tailwindcss.svg",
-                alt: "TailwindCSS Logo",
-              },
-              {
-                desc: "Deployed on",
-                name: "Vercel",
-                icon: "/svg/vercel.svg",
-                alt: "Vercel Logo",
-              },
-            ].map((tech) => (
-              <div class="flex items-center justify-center lg:justify-normal space-x-3">
-                <span class="text-[var(--white-icon)] text-sm">
-                  {tech.desc}
-                </span>
-                <img
-                  src={tech.icon}
-                  alt={tech.alt}
-                  class="h-5 w-5 object-contain filter brightness-0 invert opacity-50"
-                  loading="lazy"
-                />
-                <span class="text-[var(--white-icon)] text-sm">
-                  {tech.name}
-                </span>
-              </div>
-            ))
-          }
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              ></path>
+            </svg>
+          </a>
         </div>
       </div>
-      <div class="flex flex-col items-center lg:items-start space-y-6">
-        <div class="w-full max-w-xs">
-          <iframe
-            data-testid="embed-iframe"
-            style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/7kbTZWt7DnzIzbkyzFE1PW?utm_source=generator&theme=0"
-            width="100%"
-            height="152"
-            frameborder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-        </div>
+
+      <!-- Columna 2: Servicios -->
+      <div class="space-y-4">
+        <h4 class="text-[var(--white)] text-base font-semibold">Servicios</h4>
+        <ul class="space-y-2 text-sm text-[var(--white-icon)]">
+          <li>
+            <a
+              href="/servicios#manicura"
+              class="hover:text-[var(--sec)] transition">Manicura y Pedicura</a
+            >
+          </li>
+          <li>
+            <a
+              href="/servicios#depilacion"
+              class="hover:text-[var(--sec)] transition">Depilación con cera</a
+            >
+          </li>
+          <li>
+            <a
+              href="/servicios#laser"
+              class="hover:text-[var(--sec)] transition">Depilación láser</a
+            >
+          </li>
+          <li>
+            <a
+              href="/servicios#peluqueria"
+              class="hover:text-[var(--sec)] transition">Estilismo capilar</a
+            >
+          </li>
+          <li>
+            <a
+              href="/servicios#maquillaje"
+              class="hover:text-[var(--sec)] transition"
+              >Servicio de maquillaje</a
+            >
+          </li>
+          <li>
+            <a
+              href="/servicios#facial"
+              class="hover:text-[var(--sec)] transition">Limpieza facial</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Contacto -->
+      <div class="space-y-4">
+        <h4 class="text-[var(--white)] text-base font-semibold">Contacto</h4>
+        <ul class="space-y-3 text-sm text-[var(--white-icon)]">
+          <li class="flex items-start gap-2">
+            <svg
+              class="w-5 h-5 flex-shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span
+              >Calle Lic. Madrid, 10<br />28802 Alcalá de Henares, Madrid</span
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              ></path>
+            </svg>
+            <a
+              href="tel:+34918837501"
+              class="hover:text-[var(--sec)] transition">918 83 75 01</a
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <a
+              href="mailto:info@paulanails.es"
+              class="hover:text-[var(--sec)] transition">info@paulanails.es</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Horario -->
+      <div class="space-y-4">
+        <h4 class="text-[var(--white)] text-base font-semibold">Horario</h4>
+        <ul class="space-y-2 text-sm text-[var(--white-icon)]">
+          <li class="flex justify-between gap-4">
+            <span>Lunes - Viernes:</span>
+            <div class="text-right">
+              <div class="font-medium">10:00 - 14:00</div>
+              <div class="font-medium">17:00 - 19:30</div>
+            </div>
+          </li>
+          <li class="flex justify-between gap-4">
+            <span>Sábado:</span>
+            <span class="font-medium">Cerrado</span>
+          </li>
+          <li class="flex justify-between gap-4">
+            <span>Domingo:</span>
+            <span class="font-medium">Cerrado</span>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-[#ffffff10]">
-      <p class="text-center text-sm text-[var(--white-icon)] space-y-2">
-        <!-- If you are using this template, by MIT License you can't remove the copyright notice -->
-        <span class="block sm:inline"
-          >Copyright © 2025 <a href="https://github.com/Gan-dev">Gandev</a>. All
-          rights reserved.</span
+    <!-- Divider -->
+    <div class="border-t border-[#ffffff10] my-8"></div>
+
+    <!-- Legal Links -->
+    <div
+      class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6"
+    >
+      <div
+        class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-[var(--white-icon)]"
+      >
+        <a
+          href="/politica-privacidad"
+          class="hover:text-[var(--sec)] transition">Política de Privacidad</a
+        >
+        <a href="/aviso-legal" class="hover:text-[var(--sec)] transition"
+          >Aviso Legal</a
+        >
+        <a href="/politica-cookies" class="hover:text-[var(--sec)] transition"
+          >Política de Cookies</a
+        >
+        <a
+          href="/terminos-condiciones"
+          class="hover:text-[var(--sec)] transition">Términos y Condiciones</a
+        >
+      </div>
+    </div>
+
+    <!-- Copyright & Signature -->
+    <div class="text-center space-y-3">
+      <p class="text-sm text-[var(--white-icon)]">
+        © {new Date().getFullYear()} Paula Nails. Todos los derechos reservados.
+      </p>
+      <p class="text-xs text-[var(--white-icon)] opacity-60">
+        Diseñado y desarrollado con ❤️ por <a
+          href="https://github.com/Gan-dev"
+          target="_blank"
+          class="hover:text-[var(--sec)] transition font-medium">Gandev</a
         >
       </p>
     </div>
