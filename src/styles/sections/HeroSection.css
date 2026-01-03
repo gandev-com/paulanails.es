@@ -373,6 +373,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   padding: 1rem 2.5rem;
   background-color: var(--pink);
   color: var(--text-on-pink);
@@ -384,6 +385,14 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
+}
+
+.cta-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.cta-primary:hover svg {
+  transform: translateX(3px);
 }
 
 .cta-primary::before {
