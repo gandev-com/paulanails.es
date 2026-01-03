@@ -30,7 +30,7 @@ const navItems: NavItem[] = [
 ---
 
 <header
-  class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border-gray-100 background-nav-bar py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg"
+  class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border-gray-100 background-nav-bar py-2 shadow backdrop-blur-lg md:top-3 md:rounded-3xl lg:max-w-screen-lg"
 >
   <div
     class="fixed top-0 left-0 background-color text-white w-56 h-screen overflow-y-auto transition-transform transform -translate-x-full ease-in-out duration-300 md:hidden z-50 -mt-px -ml-px"
@@ -103,11 +103,11 @@ const navItems: NavItem[] = [
       </ul>
     </div>
   </div>
-  <div class="px-4">
+  <div class="px-3 md:px-4">
     <div
-      class="flex flex-wrap items-center justify-between md:justify-start gap-3"
+      class="flex flex-wrap items-center justify-between md:justify-start gap-2"
     >
-      <div class="w-14 h-14 rounded-full flex items-center justify-center">
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
         <img
           src="/logo-web.png"
           alt="Logo"
@@ -115,11 +115,11 @@ const navItems: NavItem[] = [
         />
       </div>
       <div class="flex shrink-0"></div>
-      <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
+      <div class="hidden md:flex md:items-center md:justify-center md:gap-3">
         {
           navItems.map((item) => (
             <a
-              class="px-6 py-2.5 bg-bento-pink-light rounded-full text-bento-pink-darker font-medium text-sm hover:bg-bento-pink transition-colors"
+              class="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-black font-medium text-xs shadow-sm hover:bg-white hover:shadow-md transition-all"
               href={item.href}
               aria-label={item.label}
             >

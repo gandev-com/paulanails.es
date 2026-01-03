@@ -118,7 +118,7 @@ const brands = productBrands; // Para el carousel actual
     {
       [...brands, ...brands].map((brand) => (
         <div class="flex flex-col items-center gap-3 group transition-all duration-300">
-          <div class="px-6 py-4 rounded-2xl transition-all group-hover:scale-110 flex items-center justify-center w-[140px] h-[60px]">
+          <div class="px-6 py-4 rounded-2xl transition-all group-hover:scale-110 flex items-center justify-center w-[180px] h-[80px]">
             <img
               src={`/svg/${brand.name}.svg`}
               alt={brand.displayName}
@@ -130,7 +130,7 @@ const brands = productBrands; // Para el carousel actual
               {brand.displayName}
             </span>
           </div>
-          <span class="text-xs text-[var(--white-icon)] opacity-70">
+          <span class="text-sm text-[var(--white-icon)] opacity-70">
             {brand.category}
           </span>
         </div>
