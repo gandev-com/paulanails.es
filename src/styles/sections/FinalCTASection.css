@@ -47,21 +47,23 @@
 
 .cta-title {
   font-family: "Edwardian Script ITC", cursive;
-  font-size: clamp(2.5rem, 2rem + 2vw, 4rem);
-  color: white;
+  font-size: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+  color: var(--text-primary);
   margin-bottom: 1.25rem;
   line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 .cta-subtitle {
   font-family: "Lato", sans-serif;
-  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
-  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  color: var(--text-primary);
   margin-bottom: 2.5rem;
   line-height: 1.6;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
 }
 
 .btn-cta-final {
@@ -70,17 +72,17 @@
   justify-content: center;
   gap: 0.75rem;
   padding: 1.25rem 2.5rem;
-  background: white;
-  color: var(--pink-darker);
+  background: var(--pink-darker);
+  color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.125rem;
   border-radius: 32px;
   text-decoration: none;
-  border: none;
+  border: 2px solid white;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -95,7 +97,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(232, 118, 154, 0.3),
+    rgba(255, 255, 255, 0.2),
     transparent
   );
   transition: left 0.5s ease;
@@ -107,7 +109,9 @@
 
 .btn-cta-final:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: white;
+  color: var(--pink-darker);
 }
 
 .btn-cta-final:active {
@@ -116,22 +120,27 @@
 
 .cta-note {
   font-family: "Lato", sans-serif;
-  font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.0625rem;
+  color: var(--text-primary);
   margin-top: 1.5rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
 }
 
 .phone-link {
-  color: white;
+  color: var(--pink-darker);
   font-weight: 700;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 6px;
 }
 
 .phone-link:hover {
-  opacity: 0.8;
+  background-color: var(--pink-darker);
+  color: white;
 }
 
 .cta-decoration {

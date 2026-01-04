@@ -448,9 +448,9 @@ const services = [
     gap: 0.5rem;
     margin-top: 0.75rem;
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--pink-darker);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--pink-dark);
     border-radius: 20px;
     color: white;
     font-family: "Montserrat", sans-serif;
@@ -459,10 +459,13 @@ const services = [
     cursor: pointer;
     transition: all 0.3s ease;
     width: fit-content;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
   .expand-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--pink-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .chevron {
