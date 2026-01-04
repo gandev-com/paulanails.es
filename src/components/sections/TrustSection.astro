@@ -1,0 +1,52 @@
+---
+import "../../styles/sections/TrustSection.css";
+
+// Por qué confiar en nosotros
+const trustCards = [
+  {
+    icon: "✨",
+    title: "+8 años de experiencia",
+    description: "Especialistas en cuidado premium de manos, pies y bienestar",
+  },
+  {
+    icon: "💎",
+    title: "Calidad garantizada",
+    description:
+      "Productos profesionales y técnicas certificadas en cada servicio",
+  },
+  {
+    icon: "🌸",
+    title: "Trato personalizado",
+    description: "Atención única adaptada a tus necesidades y ritmo",
+  },
+  {
+    icon: "💕",
+    title: "+100 clientas satisfechas",
+    description: "Tu confianza es nuestro mejor reconocimiento",
+  },
+];
+---
+
+<section class="trust-section" id="por-que-confiar">
+  <div class="trust-container">
+    <div class="trust-header">
+      <p class="eyebrow">Confianza</p>
+      <h2 class="section-title">Por qué elegirnos</h2>
+      <p class="section-subtitle">
+        Años de dedicación al cuidado y bienestar de cada clienta
+      </p>
+    </div>
+
+    <div class="trust-grid">
+      {
+        trustCards.map((card) => (
+          <div class="trust-card">
+            <div class="card-icon">{card.icon}</div>
+            <h3 class="card-title">{card.title}</h3>
+            <p class="card-description">{card.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

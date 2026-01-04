@@ -1,0 +1,120 @@
+/* Trust Section - Por qué confiar en nosotros */
+
+.trust-section {
+  padding: 5rem 1.5rem;
+  background: white;
+}
+
+.trust-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.trust-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.trust-header .eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--pink-darker);
+  margin-bottom: 1rem;
+}
+
+.trust-header .section-title {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.trust-header .section-subtitle {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.trust-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.trust-card:hover::before {
+  left: 100%;
+}
+
+.trust-card:hover {
+  border-color: var(--pink-light);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0.2);
+}
+
+.card-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.card-description {
+  font-family: "Lato", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-card,
+  .trust-card::before {
+    transition: none;
+    animation: none;
+  }
+
+  .trust-card:hover {
+    transform: none;
+  }
+}

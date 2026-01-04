@@ -1,67 +1,615 @@
 ---
-import SkillsList from "../react/SkillsList.tsx";
-import "../../styles/sections/ServicesSection.css";
+// Servicios con diseño bento-card mejorado
+const services = [
+  {
+    id: "manicura",
+    name: "Manicura & Uñas",
+    tagline: "Manos perfectas",
+    icon: "/svg/manicura.svg",
+    emoji: "💅",
+    description:
+      "Manicura profesional y diseño de uñas con técnicas avanzadas y productos premium.",
+    includes: [
+      "Limado y forma personalizada",
+      "Cutículas y acabado impecable",
+      "Esmaltado semipermanente",
+      "Hidratación profunda",
+    ],
+    priceRange: "22-45€",
+    priceNote: "Según técnica",
+  },
+  {
+    id: "pedicura",
+    name: "Pedicura Spa",
+    tagline: "Pies suaves",
+    icon: "/svg/pedicura.svg",
+    emoji: "🦶",
+    description:
+      "Pedicura completa con exfoliación, masaje relajante y tratamiento profesional para pies cansados.",
+    includes: [
+      "Exfoliación y durezas",
+      "Limado y cuidado",
+      "Masaje relajante",
+      "Esmaltado y nutrición",
+    ],
+    priceRange: "28-50€",
+    priceNote: "Incluye masaje",
+  },
+  {
+    id: "masajes",
+    name: "Masajes & Terapias",
+    tagline: "Relájate",
+    icon: "/svg/terapias.svg",
+    emoji: "🌿",
+    description:
+      "Masajes relajantes y terapéuticos para liberar tensión, mejorar circulación y recuperar tu bienestar.",
+    includes: [
+      "Masaje relajante/descontracturante",
+      "Aromaterapia personalizada",
+      "Técnicas de presión adaptadas",
+      "Ambiente privado y tranquilo",
+    ],
+    priceRange: "35-65€",
+    priceNote: "30-60min",
+  },
+  {
+    id: "depilacion",
+    name: "Depilación Láser",
+    tagline: "Piel suave",
+    icon: "/svg/laser.svg",
+    emoji: "✨",
+    description:
+      "Depilación láser definitiva con tecnología avanzada, segura y efectiva para todas las zonas.",
+    includes: [
+      "Equipos certificados y seguros",
+      "Sesiones personalizadas",
+      "Tratamiento en todas las zonas",
+      "Seguimiento profesional",
+    ],
+    priceRange: "25-120€",
+    priceNote: "Por zona/sesión",
+  },
+  {
+    id: "peluqueria",
+    name: "Peluquería",
+    tagline: "Tu mejor versión",
+    icon: "/svg/peluqueria.svg",
+    emoji: "💇‍♀️",
+    description:
+      "Corte, peinado y tratamientos capilares profesionales adaptados a tu estilo y personalidad.",
+    includes: [
+      "Corte personalizado",
+      "Coloración y mechas",
+      "Tratamientos de hidratación",
+      "Peinados de evento",
+    ],
+    priceRange: "18-85€",
+    priceNote: "Según servicio",
+  },
+  {
+    id: "terapias",
+    name: "Tratamientos",
+    tagline: "Bienestar",
+    icon: "/svg/terapias.svg",
+    emoji: "🧘‍♀️",
+    description:
+      "Tratamientos faciales y corporales que integran relajación, equilibrio y renovación personal.",
+    includes: [
+      "Reflexología podal",
+      "Drenaje linfático",
+      "Reiki y terapias energéticas",
+      "Consultas de bienestar",
+    ],
+    priceRange: "30-75€",
+    priceNote: "Por sesión",
+  },
+];
 ---
 
-<section class="services-section">
-  <div class="services-header">
-    <p class="services-eyebrow">Experiencias premium</p>
-    <h3 class="services-title">Servicios de Belleza en Alcalá de Henares</h3>
-    <p class="services-subtitle">
-      Tratamientos personalizados para realzar tu belleza natural
-    </p>
-  </div>
-  <div class="services-wrapper">
-    <SkillsList client:load />
-  </div>
+<section class="services-section" id="servicios">
+  <div class="services-container">
+    <div class="services-header">
+      <p class="eyebrow">Experiencias Premium</p>
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <p class="section-subtitle">
+        Cada tratamiento es una experiencia pensada para ti, con técnicas
+        profesionales y productos de alta calidad.
+      </p>
+    </div>
 
-  <!-- CTA Card - Reserva Online -->
-  <div class="services-cta-wrapper">
-    <a href="#booking" class="services-cta-card">
-      <div class="services-cta-icon">
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
-          <line x1="16" x2="16" y1="2" y2="6"></line>
-          <line x1="8" x2="8" y1="2" y2="6"></line>
-          <line x1="3" x2="21" y1="10" y2="10"></line>
-          <path d="M8 14h.01"></path>
-          <path d="M12 14h.01"></path>
-          <path d="M16 14h.01"></path>
-          <path d="M8 18h.01"></path>
-          <path d="M12 18h.01"></path>
-        </svg>
-      </div>
-      <div class="services-cta-content">
-        <h4 class="services-cta-title">Reserva tu cita online</h4>
-        <p class="services-cta-description">
-          Accede a tu área personal y gestiona tus reservas de forma fácil y
-          segura
-        </p>
-      </div>
-      <div class="services-cta-arrow">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M5 12h14"></path>
-          <path d="m12 5 7 7-7 7"></path>
-        </svg>
-      </div>
-    </a>
+    <div class="services-grid">
+      {
+        services.map((service) => (
+          <article class="service-card" data-service-id={service.id}>
+            {/* Gradiente bento con clip-path */}
+            <div class="card-gradient" />
+
+            {/* Icono en esquina superior izquierda */}
+            <div class="card-icon">
+              <img src={service.icon} alt={service.name} loading="lazy" />
+            </div>
+
+            {/* Área de emoji/imagen placeholder */}
+            <div class="card-visual">
+              <span class="visual-emoji">{service.emoji}</span>
+            </div>
+
+            {/* Contenido principal */}
+            <div class="card-content">
+              <h3 class="card-title">{service.name}</h3>
+              <p class="card-tagline">{service.tagline}</p>
+
+              <button
+                class="expand-btn"
+                aria-label={`Ver detalles de ${service.name}`}
+                aria-expanded="false"
+              >
+                <span>Ver más</span>
+                <svg
+                  class="chevron"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Detalles expandibles */}
+            <div class="service-details" hidden>
+              <div class="details-inner">
+                <p class="service-description">{service.description}</p>
+
+                <div class="service-includes">
+                  <h4 class="includes-title">Incluye:</h4>
+                  <ul class="includes-list">
+                    {service.includes.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="service-footer">
+                  <div class="price-info">
+                    <span class="price-range">{service.priceRange}</span>
+                    <span class="price-note">{service.priceNote}</span>
+                  </div>
+                  <button class="btn-reserve" data-open-login>
+                    <span>Reservar</span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
   </div>
 </section>
+
+<script>
+  // Expand/collapse logic
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".service-card");
+
+    cards.forEach((card) => {
+      const btn = card.querySelector(".expand-btn") as HTMLButtonElement;
+      const details = card.querySelector(".service-details") as HTMLElement;
+      const chevron = card.querySelector(".chevron") as SVGElement;
+
+      if (!btn || !details || !chevron) return;
+
+      btn.addEventListener("click", () => {
+        const isExpanded = btn.getAttribute("aria-expanded") === "true";
+
+        // Cerrar todos los demás
+        cards.forEach((otherCard) => {
+          if (otherCard !== card) {
+            const otherBtn = otherCard.querySelector(
+              ".expand-btn"
+            ) as HTMLButtonElement;
+            const otherDetails = otherCard.querySelector(
+              ".service-details"
+            ) as HTMLElement;
+            const otherChevron = otherCard.querySelector(
+              ".chevron"
+            ) as SVGElement;
+
+            if (otherBtn && otherDetails && otherChevron) {
+              otherBtn.setAttribute("aria-expanded", "false");
+              otherDetails.hidden = true;
+              otherChevron.style.transform = "rotate(0deg)";
+              otherCard.classList.remove("expanded");
+            }
+          }
+        });
+
+        // Toggle actual
+        if (isExpanded) {
+          btn.setAttribute("aria-expanded", "false");
+          details.hidden = true;
+          chevron.style.transform = "rotate(0deg)";
+          card.classList.remove("expanded");
+        } else {
+          btn.setAttribute("aria-expanded", "true");
+          details.hidden = false;
+          chevron.style.transform = "rotate(180deg)";
+          card.classList.add("expanded");
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .services-section {
+    padding: 5rem 1.5rem;
+    background: var(--background);
+  }
+
+  .services-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .eyebrow {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--pink-darker);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: "Lato", sans-serif;
+    font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-family: "Lato", sans-serif;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Grid Bento */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  /* Service Card - Estilo Bento */
+  .service-card {
+    position: relative;
+    background: var(--background);
+    border-radius: 24px;
+    min-height: 240px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .service-card.expanded {
+    transform: scale(1);
+    grid-column: span 1;
+  }
+
+  @media (min-width: 768px) {
+    .service-card.expanded {
+      grid-column: span 2;
+    }
+  }
+
+  /* Gradiente con clip-path minimalista */
+  .card-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom right,
+      var(--bento-pink-light),
+      var(--bento-pink)
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%);
+    z-index: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover .card-gradient {
+    opacity: 0.9;
+  }
+
+  /* Icono en esquina superior izquierda */
+  .card-icon {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 20;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .card-icon {
+    transform: scale(1.1);
+  }
+
+  .card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0);
+  }
+
+  /* Visual emoji en esquina superior derecha */
+  .card-visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 60%;
+    border-radius: 0 24px 0 0;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover .card-visual {
+    opacity: 0.4;
+  }
+
+  .visual-emoji {
+    font-size: 4rem;
+  }
+
+  /* Contenido principal */
+  .card-content {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .card-title {
+    font-family: "Edwardian Script ITC", cursive;
+    font-size: clamp(2rem, 1.8rem + 0.5vw, 2.5rem);
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .card-tagline {
+    font-family: "Lato", sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* Botón expandir */
+  .expand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .expand-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .chevron {
+    transition: transform 0.3s ease;
+  }
+
+  /* Detalles expandibles */
+  .service-details {
+    position: relative;
+    z-index: 30;
+    padding: 1.5rem;
+    margin-top: 240px;
+    background: white;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .service-details[hidden] {
+    display: none;
+  }
+
+  .service-card.expanded {
+    min-height: auto;
+  }
+
+  .service-card.expanded .card-gradient {
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 100% 30%, 0 30%);
+  }
+
+  .details-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .service-description {
+    font-family: "Lato", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .service-includes {
+    background: var(--component-bg);
+    border-radius: 16px;
+    padding: 1.25rem;
+  }
+
+  .includes-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--pink-darker);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .includes-list {
+    display: grid;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .includes-list li {
+    font-family: "Lato", sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    padding-left: 1.75rem;
+    position: relative;
+  }
+
+  .includes-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--pink-darker);
+    font-weight: 700;
+  }
+
+  /* Footer con precio y CTA */
+  .service-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .price-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .price-range {
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pink-darker);
+  }
+
+  .price-note {
+    font-family: "Lato", sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .btn-reserve {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--pink-dark), var(--pink-darker));
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(232, 118, 154, 0.3);
+  }
+
+  .btn-reserve:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(232, 118, 154, 0.4);
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .service-card {
+      min-height: 200px;
+    }
+
+    .card-title {
+      font-size: 1.75rem;
+    }
+
+    .visual-emoji {
+      font-size: 3rem;
+    }
+
+    .service-details {
+      margin-top: 200px;
+    }
+  }
+</style>

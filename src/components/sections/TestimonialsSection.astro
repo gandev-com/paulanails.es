@@ -1,38 +1,77 @@
 ---
-import Testimonials from "../testimonials.astro";
 import "../../styles/sections/TestimonialsSection.css";
+
+// Reseñas reales de Google Reviews
+const testimonials = [
+  {
+    name: "Mariana ANCA",
+    service: "Cliente verificada",
+    text: "Salón muy acogedor, trabajo muy profesional respetando los tiempos y ofreciendo un toque personal. La dueña un encanto, el trato al cliente buenísimo 👏. Recomiendo 100%",
+    rating: 5,
+    date: "Hace 11 meses",
+  },
+  {
+    name: "VICTORIA ESTABLES",
+    service: "Cliente verificada",
+    text: "Lugar entrañable en el que entras como cliente y sales como amiga. Risas buen humor, encantada con su trabajo y su alegría. Yvonne es mi manicure favorita 💅🏻💃🏻💋",
+    rating: 5,
+    date: "Hace 2 años",
+  },
+  {
+    name: "Raquel",
+    service: "Cliente verificada",
+    text: "Gran profesional, el mejor centro de estética en Alcalá, asesoramiento personalizado para cada clienta. Ivonne es una gran persona, siempre muy atenta, divertida y alegre. Super recomendado",
+    rating: 5,
+    date: "Hace 2 años",
+  },
+];
 ---
 
-<section class="testimonials-section-wrapper">
-  <div class="testimonials-header">
-    <p class="testimonials-eyebrow">Voces reales</p>
-    <h3 class="testimonials-title">
-      Opiniones de Clientas en Alcalá de Henares
-    </h3>
-  </div>
-  <Testimonials />
+<section class="testimonials-section">
+  <div class="testimonials-container">
+    <div class="testimonials-header">
+      <p class="eyebrow">Voces reales</p>
+      <h2 class="section-title">Lo que dicen nuestras clientas</h2>
+      <p class="section-subtitle">
+        Experiencias auténticas de mujeres que confían en nosotros
+      </p>
+    </div>
 
-  <!-- Micro-CTA opcional -->
-  <div class="testimonials-cta">
-    <p class="testimonials-cta-text">
-      ¿Lista para tu próxima experiencia de belleza?
-    </p>
-    <a href="#booking" class="testimonials-cta-link">
-      Acceder a mi cuenta
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M5 12h14"></path>
-        <path d="m12 5 7 7-7 7"></path>
-      </svg>
-    </a>
+    <div class="testimonials-grid">
+      {
+        testimonials.map((testimonial) => (
+          <article class="testimonial-card">
+            <div
+              class="testimonial-stars"
+              aria-label={`${testimonial.rating} de 5 estrellas`}
+            >
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg
+                  class="star"
+                  class:list={{ filled: i < testimonial.rating }}
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill={i < testimonial.rating ? "currentColor" : "none"}
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    stroke-width="2"
+                  />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="testimonial-text">
+              "{testimonial.text}"
+            </blockquote>
+            <div class="testimonial-author">
+              <p class="author-name">{testimonial.name}</p>
+              <p class="author-service">{testimonial.service}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
   </div>
 </section>

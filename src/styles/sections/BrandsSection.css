@@ -1,0 +1,242 @@
+/* Brands Section - Logo Wall de marcas profesionales */
+
+.brands-section {
+  padding: 5rem 1.5rem;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.brands-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.brands-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.brands-header .eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--pink-darker);
+  margin-bottom: 1rem;
+}
+
+.brands-header .section-title {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.brands-header .section-subtitle {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Logo Wall */
+.logo-wall {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+/* Gradientes laterales */
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--background), transparent);
+}
+
+/* Track de logos */
+.logo-track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-infinite 60s linear infinite;
+  width: max-content;
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-infinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Brand Card */
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 180px;
+  transition: transform 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: scale(1.05);
+}
+
+.brand-logo-wrapper {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  width: 180px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-logo-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.brand-card:hover .brand-logo-wrapper::before {
+  left: 100%;
+}
+
+.brand-card:hover .brand-logo-wrapper {
+  box-shadow: var(--shadow-md);
+}
+
+.brand-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover .brand-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.brand-name-fallback {
+  display: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.brand-category {
+  font-family: "Lato", sans-serif;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Footer */
+.brands-footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--component-bg);
+  border-radius: 24px;
+}
+
+.footer-text {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.footer-text strong {
+  color: var(--pink-darker);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .brands-section {
+    padding: 3rem 1rem;
+  }
+
+  .logo-track {
+    gap: 1.5rem;
+    animation-duration: 40s;
+  }
+
+  .brand-card {
+    min-width: 150px;
+  }
+
+  .brand-logo-wrapper {
+    width: 150px;
+    height: 75px;
+    padding: 1rem 1.5rem;
+  }
+
+  .fade-left,
+  .fade-right {
+    width: 60px;
+  }
+}
+
+/* Respetar preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none;
+  }
+
+  .logo-track:hover {
+    animation: none;
+  }
+
+  .brand-logo-wrapper::before {
+    display: none;
+  }
+}

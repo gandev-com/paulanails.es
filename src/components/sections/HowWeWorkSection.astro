@@ -1,0 +1,58 @@
+---
+import "../../styles/sections/HowWeWorkSection.css";
+
+// Cómo trabajamos - proceso claro
+const steps = [
+  {
+    number: "01",
+    title: "Consulta inicial",
+    description:
+      "Conversamos sobre lo que necesitas, tus expectativas y la mejor opción para ti. Sin prisas.",
+  },
+  {
+    number: "02",
+    title: "Tratamiento personalizado",
+    description:
+      "Aplicamos técnicas profesionales adaptadas a tu caso, con productos de calidad y todo el tiempo necesario.",
+  },
+  {
+    number: "03",
+    title: "Seguimiento cercano",
+    description:
+      "Te acompañamos después del servicio con consejos y disponibilidad para cualquier duda o ajuste.",
+  },
+  {
+    number: "04",
+    title: "Resultados visibles",
+    description:
+      "Tu satisfacción es nuestro objetivo. Buscamos que salgas feliz y con ganas de volver.",
+  },
+];
+---
+
+<section class="howwework-section">
+  <div class="howwework-container">
+    <div class="howwework-header">
+      <p class="eyebrow">Nuestro Proceso</p>
+      <h2 class="section-title">Cómo trabajamos</h2>
+      <p class="section-subtitle">
+        Un método sencillo, humano y enfocado 100% en tu comodidad y bienestar
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      {
+        steps.map((step, index) => (
+          <div class="step-card">
+            <div class="step-number">{step.number}</div>
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-description">{step.description}</p>
+            {index < steps.length - 1 && (
+              <div class="step-connector" aria-hidden="true" />
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

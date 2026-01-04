@@ -1,0 +1,83 @@
+---
+import "../../styles/sections/BrandsSection.css";
+
+// Sección de marcas profesionales con las que trabajamos
+const brands = [
+  // Peluquería
+  { name: "echosline", displayName: "Echosline", category: "Peluquería" },
+  { name: "kerastase", displayName: "Kérastase", category: "Peluquería" },
+  { name: "loreal", displayName: "L'Oréal", category: "Peluquería" },
+  { name: "olaplex", displayName: "Olaplex", category: "Peluquería" },
+  { name: "wella", displayName: "Wella", category: "Peluquería" },
+  { name: "revlon", displayName: "Revlon", category: "Peluquería" },
+  { name: "arual", displayName: "Arual", category: "Peluquería" },
+  { name: "bbcos", displayName: "BBcos", category: "Peluquería" },
+
+  // Estética
+  { name: "ziaja", displayName: "Ziaja", category: "Estética" },
+  { name: "medisana", displayName: "Medisana", category: "Estética" },
+
+  // Uñas
+  { name: "glaze", displayName: "Glaze", category: "Uñas" },
+  { name: "thuya", displayName: "Thuya", category: "Uñas" },
+  { name: "andreia", displayName: "Andreia", category: "Uñas" },
+  { name: "masglo", displayName: "Masglo", category: "Uñas" },
+  { name: "tammy-taylor", displayName: "Tammy Taylor", category: "Uñas" },
+
+  // Extensiones
+  { name: "liam-hair", displayName: "Liam Hair", category: "Extensiones" },
+
+  // Profesional
+  { name: "belkos", displayName: "Belkos", category: "Profesional" },
+  { name: "egalle", displayName: "Egalle", category: "Profesional" },
+];
+---
+
+<section class="brands-section">
+  <div class="brands-container">
+    <div class="brands-header">
+      <p class="eyebrow">Calidad Premium</p>
+      <h2 class="section-title">Trabajamos con las Mejores Marcas</h2>
+      <p class="section-subtitle">
+        Productos profesionales de primera calidad para garantizar los mejores
+        resultados
+      </p>
+    </div>
+
+    <!-- Logo Wall con scroll infinito -->
+    <div class="logo-wall">
+      <!-- Gradientes laterales -->
+      <div class="fade-left" aria-hidden="true"></div>
+      <div class="fade-right" aria-hidden="true"></div>
+
+      <!-- Track de logos (duplicado para loop infinito) -->
+      <div class="logo-track">
+        {
+          [...brands, ...brands].map((brand) => (
+            <div class="brand-card">
+              <div class="brand-logo-wrapper">
+                <img
+                  src={`/svg/${brand.name}.svg`}
+                  alt={brand.displayName}
+                  class="brand-logo"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <span class="brand-name-fallback">{brand.displayName}</span>
+              </div>
+              <span class="brand-category">{brand.category}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Texto de confianza -->
+    <div class="brands-footer">
+      <p class="footer-text">
+        <strong>Más de 18 marcas profesionales</strong> seleccionadas para ofrecerte
+        la mejor experiencia de belleza y bienestar.
+      </p>
+    </div>
+  </div>
+</section>

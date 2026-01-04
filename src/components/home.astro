@@ -1,46 +1,43 @@
 ---
-// Importar secciones
+// Home - Estructura completa
 import HeroSection from "./sections/HeroSection.astro";
-import LogosSection from "./sections/LogosSection.astro";
+import TrustSection from "./sections/TrustSection.astro";
 import ServicesSection from "./sections/ServicesSection.astro";
-import BookingGatewaySection from "./sections/BookingGatewaySection.astro";
+import HowWeWorkSection from "./sections/HowWeWorkSection.astro";
+import BrandsSection from "./sections/BrandsSection.astro";
+import AboutMeSection from "./sections/AboutMeSection.astro";
+import MapSection from "./sections/MapSection.astro";
 import TestimonialsSection from "./sections/TestimonialsSection.astro";
-
-// Importar componentes UI
-import Separator from "./ui/Separator.astro";
-import SakuraDivider from "./ui/SakuraDivider.astro";
+import FinalCTASection from "./sections/FinalCTASection.astro";
+import LoginModal from "./ui/LoginModal.astro";
 ---
 
-<!-- Hero Section - Full Width -->
+<!-- Hero con slider y narrativa -->
 <HeroSection />
 
-<!-- Content Section con fondo -->
-<div class="bg-[var(--background)] py-12 md:py-16 lg:py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="bg-[var(--background)] rounded-[32px] p-6 md:p-10 lg:p-12">
-      <!-- Separador inicial -->
-      <Separator spacing="md" />
+<!-- Por qué confiar en nosotros -->
+<TrustSection />
 
-      <!-- Logos Section -->
-      <LogosSection />
+<!-- Servicios (bento cards) -->
+<ServicesSection />
 
-      <!-- Separador -->
-      <Separator spacing="md" />
+<!-- Cómo trabajamos (proceso) -->
+<HowWeWorkSection />
 
-      <!-- Services Section -->
-      <ServicesSection />
+<!-- Marcas profesionales (logo wall) -->
+<BrandsSection />
 
-      <!-- Separador decorativo con sakura -->
-      <SakuraDivider />
+<!-- Sobre mí (historia personal) -->
+<AboutMeSection />
 
-      <!-- Booking Gateway Section -->
-      <BookingGatewaySection />
+<!-- Ubicación (Google Maps) -->
+<MapSection />
 
-      <!-- Separador -->
-      <Separator spacing="md" />
+<!-- Testimonios (reseñas de Google) -->
+<TestimonialsSection />
 
-      <!-- Testimonials Section -->
-      <TestimonialsSection />
-    </div>
-  </div>
-</div>
+<!-- CTA Final (reserva) -->
+<FinalCTASection />
+
+<!-- Modal de Login/Reserva -->
+<LoginModal />

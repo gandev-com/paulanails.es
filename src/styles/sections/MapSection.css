@@ -1,0 +1,220 @@
+/* Map Section - Google Maps + Info */
+
+.map-section {
+  padding: 5rem 1.5rem;
+  background: var(--background);
+}
+
+.map-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.map-header .eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--pink-darker);
+  margin-bottom: 1rem;
+}
+
+.map-header .section-title {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.map-header .section-subtitle {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.map-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .map-wrapper {
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+  }
+}
+
+.map-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 179, 209, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.info-card:hover::before {
+  left: 100%;
+}
+
+.info-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-light), var(--pink));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255, 179, 209, 0.3);
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.info-text {
+  font-family: "Lato", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.phone-link {
+  color: var(--pink-darker);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.phone-link:hover {
+  color: var(--pink-dark);
+  text-decoration: underline;
+}
+
+.btn-directions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--pink-dark), var(--pink-darker));
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(232, 118, 154, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-directions::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-directions:hover::before {
+  left: 100%;
+}
+
+.btn-directions:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232, 118, 154, 0.4);
+}
+
+.map-embed {
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  height: 450px;
+}
+
+.map-embed iframe {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .map-embed {
+    height: 350px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .info-card,
+  .info-card::before,
+  .btn-directions,
+  .btn-directions::before {
+    transition: none;
+    animation: none;
+  }
+
+  .info-card:hover,
+  .btn-directions:hover {
+    transform: none;
+  }
+}

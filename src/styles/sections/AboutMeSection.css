@@ -1,0 +1,124 @@
+/* About Me Section - Historia personal */
+
+.aboutme-section {
+  padding: 5rem 1.5rem;
+  background: white;
+}
+
+.aboutme-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.aboutme-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .aboutme-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.aboutme-image-wrapper {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.aboutme-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 32px;
+}
+
+.aboutme-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.aboutme-content .eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--pink-darker);
+}
+
+.aboutme-content .section-title {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.aboutme-text {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.aboutme-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--pink-dark), var(--pink-darker));
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(232, 118, 154, 0.3);
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutme-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.aboutme-cta:hover::before {
+  left: 100%;
+}
+
+.aboutme-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232, 118, 154, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aboutme-cta,
+  .aboutme-cta::before {
+    transition: none;
+    animation: none;
+  }
+
+  .aboutme-cta:hover {
+    transform: none;
+  }
+}
