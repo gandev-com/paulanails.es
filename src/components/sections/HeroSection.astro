@@ -8,27 +8,46 @@
     <div class="hero-background">
       <div class="slider-container">
         <img
+          src="/nails/nails_1.webp"
+          alt="Manicura y diseño de uñas"
+          class="slider-image active"
+          loading="eager"
+        />
+        <img
+          src="/nails/nails_2.webp"
+          alt="Centro de belleza"
+          class="slider-image"
+          loading="lazy"
+        />
+        <img
+          src="/nails/nails_3.webp"
+          alt="Centro de belleza"
+          class="slider-image"
+          loading="lazy"
+        />
+        <img
+          src="/nails/nails_4.webp"
+          alt="Centro de belleza"
+          class="slider-image"
+          loading="lazy"
+        />
+
+        <img
+          src="/nails/nails_5.webp"
+          alt="Centro de belleza"
+          class="slider-image"
+          loading="lazy"
+        />
+        <img
           src="/nails/store-colors-manicure.webp"
           alt="Centro de estética Paula Nails"
-          class="slider-image active"
+          class="slider-image"
           fetchpriority="high"
           loading="eager"
         />
         <img
           src="/nails/store-hair.webp"
           alt="Servicios de peluquería"
-          class="slider-image"
-          loading="lazy"
-        />
-        <img
-          src="/nails/store-manicure.webp"
-          alt="Manicura y diseño de uñas"
-          class="slider-image"
-          loading="lazy"
-        />
-        <img
-          src="/nails/store-outside.webp"
-          alt="Centro de belleza"
           class="slider-image"
           loading="lazy"
         />
@@ -182,7 +201,7 @@
   }
 
   const isReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
   if (!isReducedMotion && slides.length > 0) {
     setInterval(changeSlide, 5000);
@@ -198,7 +217,7 @@
 
   let textIndex = 0;
   const textElement = document.querySelector(
-    ".rotating-text"
+    ".rotating-text",
   ) as HTMLElement | null;
 
   function rotateText() {
@@ -226,7 +245,7 @@
     ticking = true;
     requestAnimationFrame(() => {
       const heroBackground = document.querySelector(
-        ".hero-background"
+        ".hero-background",
       ) as HTMLElement;
       const scrolled = window.pageYOffset;
       const heroHeight = window.innerHeight;

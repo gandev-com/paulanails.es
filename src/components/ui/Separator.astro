@@ -14,36 +14,38 @@ const spacingClasses = {
 ---
 
 <div class={`separator-wrapper ${spacingClasses[spacing]}`}>
-  {variant === "sakura" ? (
-    <div class="sakura-separator">
-      <div class="separator-line left"></div>
-      <div class="sakura-icon">
-        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-          <path
-            d="M20 5C20 5 15 10 15 15C15 17.761 17.239 20 20 20C22.761 20 25 17.761 25 15C25 10 20 5 20 5Z"
-            fill="currentColor"
-          />
-          <path
-            d="M20 35C20 35 25 30 25 25C25 22.239 22.761 20 20 20C17.239 20 15 22.239 15 25C15 30 20 35 20 35Z"
-            fill="currentColor"
-          />
-          <path
-            d="M5 20C5 20 10 15 15 15C17.761 15 20 17.239 20 20C20 22.761 17.761 25 15 25C10 25 5 20 5 20Z"
-            fill="currentColor"
-          />
-          <path
-            d="M35 20C35 20 30 25 25 25C22.239 25 20 22.761 20 20C20 17.239 22.239 15 25 15C30 15 35 20 35 20Z"
-            fill="currentColor"
-          />
-        </svg>
+  {
+    variant === "sakura" ? (
+      <div class="sakura-separator">
+        <div class="separator-line left" />
+        <div class="sakura-icon">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+            <path
+              d="M20 5C20 5 15 10 15 15C15 17.761 17.239 20 20 20C22.761 20 25 17.761 25 15C25 10 20 5 20 5Z"
+              fill="currentColor"
+            />
+            <path
+              d="M20 35C20 35 25 30 25 25C25 22.239 22.761 20 20 20C17.239 20 15 22.239 15 25C15 30 20 35 20 35Z"
+              fill="currentColor"
+            />
+            <path
+              d="M5 20C5 20 10 15 15 15C17.761 15 20 17.239 20 20C20 22.761 17.761 25 15 25C10 25 5 20 5 20Z"
+              fill="currentColor"
+            />
+            <path
+              d="M35 20C35 20 30 25 25 25C22.239 25 20 22.761 20 20C20 17.239 22.239 15 25 15C30 15 35 20 35 20Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <div class="separator-line right" />
       </div>
-      <div class="separator-line right"></div>
-    </div>
-  ) : (
-    <div class="default-separator">
-      <div class="separator-line full"></div>
-    </div>
-  )}
+    ) : (
+      <div class="default-separator">
+        <div class="separator-line full" />
+      </div>
+    )
+  }
 </div>
 
 <style>
@@ -81,19 +83,11 @@ const spacingClasses = {
   }
 
   .separator-line.left {
-    background: linear-gradient(
-      to right,
-      transparent,
-      var(--pink-dark)
-    );
+    background: linear-gradient(to right, transparent, var(--pink-dark));
   }
 
   .separator-line.right {
-    background: linear-gradient(
-      to left,
-      transparent,
-      var(--pink-dark)
-    );
+    background: linear-gradient(to left, transparent, var(--pink-dark));
   }
 
   .separator-line.full {

@@ -118,9 +118,7 @@ const navItems: NavItem[] = [
     </div>
   </div>
   <div class="px-3 md:px-4">
-    <div
-      class="flex flex-wrap items-center justify-between gap-2"
-    >
+    <div class="flex flex-wrap items-center justify-between gap-2">
       <!-- Logo -->
       <div
         class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center"
@@ -131,9 +129,11 @@ const navItems: NavItem[] = [
           class="w-full h-full object-cover"
         />
       </div>
-      
+
       <!-- Navigation Links (Desktop) -->
-      <div class="hidden md:flex md:items-center md:justify-center md:gap-3 flex-1">
+      <div
+        class="hidden md:flex md:items-center md:justify-center md:gap-3 flex-1"
+      >
         {
           navItems.map((item) => (
             <a
@@ -150,11 +150,11 @@ const navItems: NavItem[] = [
           ))
         }
       </div>
-      
+
       <!-- Login Button & Mobile Menu -->
       <div class="flex items-center justify-end gap-3">
         <!-- Login Button -->
-        <button 
+        <button
           class="login-btn hidden md:flex items-center gap-2 px-4 py-2 rounded-full font-medium text-xs transition-all"
           style="background-color: var(--pink); color: var(--text-on-pink); box-shadow: var(--shadow-sm);"
           onmouseover="this.style.backgroundColor='var(--pink-dark)'; this.style.boxShadow='var(--shadow-md)';"
@@ -162,12 +162,20 @@ const navItems: NavItem[] = [
           data-open-login
           aria-label="Login"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M10 11H4V13H10V16L15 12L10 8V11ZM2 5V19C2 19.5523 2.44772 20 3 20H12C12.5523 20 13 19.5523 13 19V16H11V18H4V6H11V8H13V5C13 4.44772 12.5523 4 12 4H3C2.44772 4 2 4.44772 2 5Z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="currentColor"
+          >
+            <path
+              d="M10 11H4V13H10V16L15 12L10 8V11ZM2 5V19C2 19.5523 2.44772 20 3 20H12C12.5523 20 13 19.5523 13 19V16H11V18H4V6H11V8H13V5C13 4.44772 12.5523 4 12 4H3C2.44772 4 2 4.44772 2 5Z"
+            ></path>
           </svg>
           <span>Login</span>
         </button>
-        
+
         <!-- Mobile Hamburger Menu -->
         <button class="background-icon md:hidden" id="open-sidebar">
           <svg
@@ -338,7 +346,7 @@ const navItems: NavItem[] = [
         rafId = requestAnimationFrame(updateNav);
       }
     },
-    { passive: true }
+    { passive: true },
   );
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -386,7 +394,7 @@ const navItems: NavItem[] = [
         openSidebarButton.classList.remove("active");
         console.log(
           "Cerrando sidebar - Active removido:",
-          !openSidebarButton.classList.contains("active")
+          !openSidebarButton.classList.contains("active"),
         );
       } else {
         // Abrir el sidebar
@@ -394,7 +402,7 @@ const navItems: NavItem[] = [
         openSidebarButton.classList.add("active");
         console.log(
           "Abriendo sidebar - Active añadido:",
-          openSidebarButton.classList.contains("active")
+          openSidebarButton.classList.contains("active"),
         );
       }
 
@@ -424,7 +432,7 @@ const navItems: NavItem[] = [
 
     const observer = new IntersectionObserver(
       observerCallback,
-      observerOptions
+      observerOptions,
     );
     sections.forEach((section) => observer.observe(section));
 

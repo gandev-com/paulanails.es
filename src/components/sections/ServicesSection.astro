@@ -6,7 +6,7 @@ const services = [
     name: "Manicura & Uñas",
     tagline: "Manos perfectas",
     icon: "/svg/manicura.svg",
-    emoji: "💅",
+    image: "/nails/nails_1.webp",
     description:
       "Manicura profesional y diseño de uñas con técnicas avanzadas y productos premium.",
     includes: [
@@ -23,7 +23,7 @@ const services = [
     name: "Pedicura Spa",
     tagline: "Pies suaves",
     icon: "/svg/pedicura.svg",
-    emoji: "🦶",
+    image: "/nails/pedicura.webp",
     description:
       "Pedicura completa con exfoliación, masaje relajante y tratamiento profesional para pies cansados.",
     includes: [
@@ -40,7 +40,7 @@ const services = [
     name: "Masajes & Terapias",
     tagline: "Relájate",
     icon: "/svg/terapias.svg",
-    emoji: "🌿",
+    image: "/nails/spa.webp",
     description:
       "Masajes relajantes y terapéuticos para liberar tensión, mejorar circulación y recuperar tu bienestar.",
     includes: [
@@ -57,7 +57,7 @@ const services = [
     name: "Depilación Láser",
     tagline: "Piel suave",
     icon: "/svg/laser.svg",
-    emoji: "✨",
+    image: "/nails/store-outside.webp",
     description:
       "Depilación láser definitiva con tecnología avanzada, segura y efectiva para todas las zonas.",
     includes: [
@@ -74,7 +74,7 @@ const services = [
     name: "Peluquería",
     tagline: "Tu mejor versión",
     icon: "/svg/peluqueria.svg",
-    emoji: "💇‍♀️",
+    image: "/nails/store-hair.webp",
     description:
       "Corte, peinado y tratamientos capilares profesionales adaptados a tu estilo y personalidad.",
     includes: [
@@ -91,7 +91,7 @@ const services = [
     name: "Tratamientos",
     tagline: "Bienestar",
     icon: "/svg/terapias.svg",
-    emoji: "🧘‍♀️",
+    image: "/nails/tratamientos.webp",
     description:
       "Tratamientos faciales y corporales que integran relajación, equilibrio y renovación personal.",
     includes: [
@@ -129,9 +129,14 @@ const services = [
               <img src={service.icon} alt={service.name} loading="lazy" />
             </div>
 
-            {/* Área de emoji/imagen placeholder */}
+            {/* Área de imagen visual */}
             <div class="card-visual">
-              <span class="visual-emoji">{service.emoji}</span>
+              <img
+                src={service.image}
+                alt={service.name}
+                class="visual-image"
+                loading="lazy"
+              />
             </div>
 
             {/* Contenido principal */}
@@ -220,13 +225,13 @@ const services = [
         cards.forEach((otherCard) => {
           if (otherCard !== card) {
             const otherBtn = otherCard.querySelector(
-              ".expand-btn"
+              ".expand-btn",
             ) as HTMLButtonElement;
             const otherDetails = otherCard.querySelector(
-              ".service-details"
+              ".service-details",
             ) as HTMLElement;
             const otherChevron = otherCard.querySelector(
-              ".chevron"
+              ".chevron",
             ) as SVGElement;
 
             if (otherBtn && otherDetails && otherChevron) {
@@ -409,8 +414,20 @@ const services = [
     opacity: 0.4;
   }
 
-  .visual-emoji {
-    font-size: 4rem;
+  .visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.6;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .service-card:hover .visual-image {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 
   /* Contenido principal */
@@ -607,8 +624,8 @@ const services = [
       font-size: 1.75rem;
     }
 
-    .visual-emoji {
-      font-size: 3rem;
+    .visual-image {
+      object-position: center;
     }
 
     .service-details {
