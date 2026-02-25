@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
   },
   {
     label: "Reservar",
-    href: "#",
+    href: "https://wa.me/+34660775255",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3ZM4 9V19H20V9H4ZM6 11H8V13H6V11ZM6 15H8V17H6V15ZM10 11H18V13H10V11ZM10 15H15V17H10V15Z"></path></svg>`,
   },
 ];
@@ -173,7 +173,7 @@ const navItems: NavItem[] = [
               d="M10 11H4V13H10V16L15 12L10 8V11ZM2 5V19C2 19.5523 2.44772 20 3 20H12C12.5523 20 13 19.5523 13 19V16H11V18H4V6H11V8H13V5C13 4.44772 12.5523 4 12 4H3C2.44772 4 2 4.44772 2 5Z"
             ></path>
           </svg>
-          <span>Login</span>
+          <span>Sumaq</span>
         </button>
 
         <!-- Mobile Hamburger Menu -->
@@ -382,6 +382,8 @@ const navItems: NavItem[] = [
     };
     const sidebar = document.getElementById("sidebar");
     const openSidebarButton = document.getElementById("open-sidebar");
+
+    if (!openSidebarButton || !sidebar) return;
 
     openSidebarButton.addEventListener("click", (e) => {
       e.stopPropagation();
