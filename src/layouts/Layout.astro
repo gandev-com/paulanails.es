@@ -1,6 +1,7 @@
 ---
 import LoginModal from "../components/ui/LoginModal.astro";
 import "../styles/global.css";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title: string;
@@ -92,6 +93,7 @@ const { title } = Astro.props;
       }
     </script>
     <LoginModal />
+    <Analytics />
   </head>
   <body class="bg-[--background]">
     <slot />
