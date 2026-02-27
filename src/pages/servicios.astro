@@ -484,19 +484,14 @@ import ServiciosTabs from "../components/react/ServiciosTabs.tsx";
   }
 
   /* ── ITEMS GRID ── */
+  /* Single column always — 2-col breaks accordion animation (row height shared) */
   .srv-items-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 0.55rem;
     list-style: none;
     padding: 0;
     margin: 0 0 1.5rem;
-  }
-
-  @media (min-width: 560px) {
-    .srv-items-grid {
-      grid-template-columns: 1fr 1fr;
-    }
   }
 
   .srv-item {
@@ -629,33 +624,26 @@ import ServiciosTabs from "../components/react/ServiciosTabs.tsx";
     flex-wrap: wrap;
   }
 
-  /* Recommended badge */
+  /* Recommended badge — subtle warm tint */
   .srv-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
     color: var(--primary-dark);
-    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    background: rgba(232, 117, 140, 0.07);
+    border: 1px solid rgba(232, 117, 140, 0.25);
     border-radius: 9999px;
-    padding: 0.15rem 0.5rem 0.15rem 0.35rem;
-    line-height: 1;
+    padding: 0.1rem 0.45rem;
+    line-height: 1.4;
     white-space: nowrap;
     vertical-align: middle;
   }
 
   /* Highlighted border on recommended items */
   .srv-item--recommended {
-    border-color: rgba(232, 117, 140, 0.28);
-    background: rgba(255, 212, 229, 0.2);
-  }
-
-  .srv-item--recommended:hover {
-    border-color: rgba(232, 117, 140, 0.45);
-    background: rgba(255, 212, 229, 0.3);
+    border-color: rgba(232, 117, 140, 0.2);
   }
 
   /* Decoration disclaimer note */
@@ -733,11 +721,6 @@ import ServiciosTabs from "../components/react/ServiciosTabs.tsx";
   .srv-item:hover .srv-chip {
     background: rgba(232, 117, 140, 0.08);
     border-color: rgba(232, 117, 140, 0.2);
-  }
-
-  .srv-item--recommended .srv-chip {
-    background: rgba(255, 212, 229, 0.4);
-    border-color: rgba(232, 117, 140, 0.18);
   }
 
   /* ── PANEL CTA ── */

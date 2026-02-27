@@ -473,12 +473,7 @@ export default function ServiciosTabs() {
                     <span className="srv-item-nombre">
                       {item.nombre}
                       {item.recomendado && (
-                        <span className="srv-badge" aria-label="Recomendado por la esteticista">
-                          <svg width="9" height="9" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
-                            <path d="M6 0l1.5 4.5H12L8.25 7.3l1.5 4.5L6 9l-3.75 2.8 1.5-4.5L0 4.5h4.5z"/>
-                          </svg>
-                          Recomendado
-                        </span>
+                        <span className="srv-badge" aria-label="Recomendado por la esteticista">Recomendado</span>
                       )}
                     </span>
                   </div>
