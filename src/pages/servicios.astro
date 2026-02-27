@@ -2,586 +2,39 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/nav.astro";
 import Footer from "../components/footer.astro";
+import ServiciosTabs from "../components/react/ServiciosTabs.tsx";
 ---
 
 <Layout title="Servicios - Paula Nails">
   <Nav />
 
-  <section class="text-[var(--white)] min-h-screen py-24 md:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="srv-page">
+    <div class="srv-container">
+
       <!-- Header -->
-      <div class="text-center mb-12 md:mb-16">
-        <h1 class="text-5xl md:text-7xl font-medium mb-6">
+      <header class="srv-header">
+        <p class="srv-eyebrow srv-anim-1">Centro de Belleza · Paula Nails</p>
+        <h1 class="srv-title srv-anim-2">
           Nuestros <span class="font-edwardian">Servicios</span>
         </h1>
-        <p
-          class="text-lg md:text-xl text-[var(--white-icon)] max-w-3xl mx-auto"
-        >
-          Experiencias de belleza diseñadas para realzar tu esencia
+        <p class="srv-subtitle srv-anim-3">
+          Elige tu ritual de belleza y descubre todo lo que podemos hacer por ti
         </p>
+      </header>
+
+      <!-- Dynamic tabs card (React) -->
+      <div class="srv-anim-4">
+        <ServiciosTabs client:load />
       </div>
 
-      <!-- Services Grid -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-      >
-        <!-- Manicura -->
-        <div
-          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
-          style="background-color: var(--background);"
-        >
-          <div
-            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
-            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
-          >
-          </div>
-
-          <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
-            style="width: 55%; height: 55%;"
-          >
-            <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
-            >
-              <img src="/svg/manicura.svg" alt="Manicura" class="w-16 h-16 object-contain" />
-            </div>
-          </div>
-
-          <div class="relative z-20 p-6 h-full flex flex-col">
-            <div class="mb-4">
-              <img src="/svg/manicura.svg" alt="Manicura" class="w-10 h-10 object-contain" />
-            </div>
-            <div class="flex-1">
-              <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
-              >
-                Manicura
-              </h3>
-              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
-                El arte en la punta de tus dedos
-              </p>
-
-              <div
-                class="service-details"
-                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
-              >
-                <p
-                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
-                >
-                  Transforma tus manos con técnicas profesionales y productos de
-                  alta gama. Desde lo clásico hasta lo más atrevido.
-                </p>
-
-                <div class="mb-4">
-                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
-                    Incluye:
-                  </h4>
-                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
-                    <li>• Manicura clásica y francesa</li>
-                    <li>• Uñas acrílicas y de gel</li>
-                    <li>• Diseños personalizados y nail art</li>
-                    <li>• Esmaltado semipermanente</li>
-                  </ul>
-                </div>
-
-                <div
-                  class="mb-4 p-3 rounded-xl"
-                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
-                >
-                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
-                    Desde
-                  </p>
-                  <p class="text-[var(--white)] text-2xl font-bold">22–45 €</p>
-                </div>
-
-                <a
-                  href="/#contact"
-                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
-                  style="background: var(--sec); color: var(--white);"
-                >
-                  Reservar ahora
-                </a>
-              </div>
-
-              <button
-                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
-              >
-                Ver detalles
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pedicura -->
-        <div
-          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
-          style="background-color: var(--background);"
-        >
-          <div
-            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
-            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
-          >
-          </div>
-
-          <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
-            style="width: 55%; height: 55%;"
-          >
-            <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
-            >
-              <img src="/svg/pedicura.svg" alt="Pedicura" class="w-16 h-16 object-contain" />
-            </div>
-          </div>
-
-          <div class="relative z-20 p-6 h-full flex flex-col">
-            <div class="mb-4">
-              <img src="/svg/pedicura.svg" alt="Pedicura" class="w-10 h-10 object-contain" />
-            </div>
-            <div class="flex-1">
-              <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
-              >
-                Pedicura
-              </h3>
-              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
-                Bienestar desde la base
-              </p>
-
-              <div
-                class="service-details"
-                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
-              >
-                <p
-                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
-                >
-                  Ritual completo para tus pies: exfoliación, hidratación y
-                  acabado impecable. Mereces caminar sobre nubes.
-                </p>
-
-                <div class="mb-4">
-                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
-                    Incluye:
-                  </h4>
-                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
-                    <li>• Pedicura clásica y spa</li>
-                    <li>• Tratamiento de callosidades</li>
-                    <li>• Hidratación profunda</li>
-                    <li>• Esmaltado permanente</li>
-                    <li>• Diseños para pies</li>
-                  </ul>
-                </div>
-
-                <div
-                  class="mb-4 p-3 rounded-xl"
-                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
-                >
-                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
-                    Desde
-                  </p>
-                  <p class="text-[var(--white)] text-2xl font-bold">28–50 €</p>
-                </div>
-
-                <a
-                  href="/#contact"
-                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
-                  style="background: var(--sec); color: var(--white);"
-                >
-                  Reservar ahora
-                </a>
-              </div>
-
-              <button
-                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
-              >
-                Ver detalles
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Masajes -->
-        <div
-          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
-          style="background-color: var(--background);"
-        >
-          <div
-            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
-            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
-          >
-          </div>
-
-          <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
-            style="width: 55%; height: 55%;"
-          >
-            <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
-            >
-              <img src="/svg/terapias.svg" alt="Masajes" class="w-16 h-16 object-contain" />
-            </div>
-          </div>
-
-          <div class="relative z-20 p-6 h-full flex flex-col">
-            <div class="mb-4">
-              <img src="/svg/terapias.svg" alt="Masajes" class="w-10 h-10 object-contain" />
-            </div>
-            <div class="flex-1">
-              <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
-              >
-                Masajes
-              </h3>
-              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
-                Equilibrio para cuerpo y mente
-              </p>
-
-              <div
-                class="service-details"
-                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
-              >
-                <p
-                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
-                >
-                  Libera tensiones, reconecta contigo. Terapias manuales
-                  adaptadas a lo que tu cuerpo necesita hoy.
-                </p>
-
-                <div class="mb-4">
-                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
-                    Incluye:
-                  </h4>
-                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
-                    <li>• Masaje relajante y descontracturante</li>
-                    <li>• Masaje deportivo</li>
-                    <li>• Reflexología podal</li>
-                    <li>• Drenaje linfático</li>
-                    <li>• Piedras calientes</li>
-                  </ul>
-                </div>
-
-                <div
-                  class="mb-4 p-3 rounded-xl"
-                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
-                >
-                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
-                    Desde
-                  </p>
-                  <p class="text-[var(--white)] text-2xl font-bold">35–65 €</p>
-                </div>
-
-                <a
-                  href="/#contact"
-                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
-                  style="background: var(--sec); color: var(--white);"
-                >
-                  Reservar ahora
-                </a>
-              </div>
-
-              <button
-                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
-              >
-                Ver detalles
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Depilación Láser -->
-        <div
-          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
-          style="background-color: var(--background);"
-        >
-          <div
-            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
-            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
-          >
-          </div>
-
-          <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
-            style="width: 55%; height: 55%;"
-          >
-            <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
-            >
-              <img src="/svg/laser.svg" alt="Depilación Láser" class="w-16 h-16 object-contain" />
-            </div>
-          </div>
-
-          <div class="relative z-20 p-6 h-full flex flex-col">
-            <div class="mb-4">
-              <img src="/svg/laser.svg" alt="Depilación Láser" class="w-10 h-10 object-contain" />
-            </div>
-            <div class="flex-1">
-              <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
-              >
-                Depilación Láser
-              </h3>
-              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
-                Adiós al vello, hola a la libertad
-              </p>
-
-              <div
-                class="service-details"
-                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
-              >
-                <p
-                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
-                >
-                  Tecnología de última generación para resultados duraderos.
-                  Tratamiento indoloro, rápido y efectivo.
-                </p>
-
-                <div class="mb-4">
-                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
-                    Incluye:
-                  </h4>
-                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
-                    <li>• Tecnología Diodo/Alejandrita</li>
-                    <li>• Todas las zonas corporales</li>
-                    <li>• Valoración personalizada</li>
-                    <li>• Apto para todo tipo de piel</li>
-                    <li>• Sesiones rápidas e indoloras</li>
-                  </ul>
-                </div>
-
-                <div
-                  class="mb-4 p-3 rounded-xl"
-                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
-                >
-                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
-                    Desde
-                  </p>
-                  <p class="text-[var(--white)] text-2xl font-bold">25–120 €</p>
-                  <p class="text-[var(--white-icon)] text-xs mt-1">
-                    por sesión / zona
-                  </p>
-                </div>
-
-                <a
-                  href="/#contact"
-                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
-                  style="background: var(--sec); color: var(--white);"
-                >
-                  Reservar ahora
-                </a>
-              </div>
-
-              <button
-                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
-              >
-                Ver detalles
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Peluquería -->
-        <div
-          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
-          style="background-color: var(--background);"
-        >
-          <div
-            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
-            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
-          >
-          </div>
-
-          <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
-            style="width: 55%; height: 55%;"
-          >
-            <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
-            >
-              <img src="/svg/peluqueria.svg" alt="Peluquería" class="w-16 h-16 object-contain" />
-            </div>
-          </div>
-
-          <div class="relative z-20 p-6 h-full flex flex-col">
-            <div class="mb-4">
-              <img src="/svg/peluqueria.svg" alt="Peluquería" class="w-10 h-10 object-contain" />
-            </div>
-            <div class="flex-1">
-              <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
-              >
-                Peluquería
-              </h3>
-              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
-                Tu cabello, nuestra inspiración
-              </p>
-
-              <div
-                class="service-details"
-                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
-              >
-                <p
-                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
-                >
-                  Cortes, color, peinados y tratamientos. Cada melena es única,
-                  cada look cuenta tu historia.
-                </p>
-
-                <div class="mb-4">
-                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
-                    Incluye:
-                  </h4>
-                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
-                    <li>• Corte y peinado profesional</li>
-                    <li>• Coloración y mechas</li>
-                    <li>• Tratamientos capilares premium</li>
-                    <li>• Alisados y permanentes</li>
-                    <li>• Peinados para eventos</li>
-                    <li>• Extensiones de cabello</li>
-                  </ul>
-                </div>
-
-                <div
-                  class="mb-4 p-3 rounded-xl"
-                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
-                >
-                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
-                    Desde
-                  </p>
-                  <p class="text-[var(--white)] text-2xl font-bold">18–85 €</p>
-                </div>
-
-                <a
-                  href="/#contact"
-                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
-                  style="background: var(--sec); color: var(--white);"
-                >
-                  Reservar ahora
-                </a>
-              </div>
-
-              <button
-                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
-              >
-                Ver detalles
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Terapias y Bienestar -->
-        <div
-          class="service-card rounded-[28px] shadow-lg relative overflow-hidden transition-all duration-500"
-          style="background-color: var(--background);"
-        >
-          <div
-            class="absolute inset-0 rounded-[28px] z-0 gradient-bg"
-            style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink)); clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 65%);"
-          >
-          </div>
-
-          <div
-            class="absolute top-0 right-0 rounded-tr-[28px] overflow-hidden z-10 opacity-20 transition-opacity glass-corner"
-            style="width: 55%; height: 55%;"
-          >
-            <div
-              class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center"
-            >
-              <img src="/svg/terapias.svg" alt="Terapias" class="w-16 h-16 object-contain" />
-            </div>
-          </div>
-
-          <div class="relative z-20 p-6 h-full flex flex-col">
-            <div class="mb-4">
-              <img src="/svg/terapias.svg" alt="Terapias" class="w-10 h-10 object-contain" />
-            </div>
-            <div class="flex-1">
-              <h3
-                class="text-[var(--white)] text-2xl md:text-3xl font-semibold mb-2"
-              >
-                Terapias
-              </h3>
-              <p class="text-[var(--white-icon)] text-sm mb-4 opacity-90">
-                Rituales para tu piel y alma
-              </p>
-
-              <div
-                class="service-details"
-                style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;"
-              >
-                <p
-                  class="text-[var(--white-icon)] text-sm mb-4 leading-relaxed"
-                >
-                  Tratamientos faciales y corporales que despiertan tu
-                  luminosidad natural. Porque cuidarte es un acto de amor.
-                </p>
-
-                <div class="mb-4">
-                  <h4 class="text-[var(--white)] text-sm font-semibold mb-2">
-                    Incluye:
-                  </h4>
-                  <ul class="text-[var(--white-icon)] text-xs space-y-1">
-                    <li>• Tratamientos faciales premium</li>
-                    <li>• Limpieza profunda</li>
-                    <li>• Hidratación y luminosidad</li>
-                    <li>• Tratamientos anti-edad</li>
-                    <li>• Aromaterapia</li>
-                    <li>• Rituales corporales</li>
-                  </ul>
-                </div>
-
-                <div
-                  class="mb-4 p-3 rounded-xl"
-                  style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);"
-                >
-                  <p class="text-[var(--white)] text-xs font-semibold mb-1">
-                    Desde
-                  </p>
-                  <p class="text-[var(--white)] text-2xl font-bold">30–75 €</p>
-                </div>
-
-                <a
-                  href="/#contact"
-                  class="block w-full py-3 px-4 rounded-full text-center font-semibold text-sm transition-all"
-                  style="background: var(--sec); color: var(--white);"
-                >
-                  Reservar ahora
-                </a>
-              </div>
-
-              <button
-                class="details-btn mt-4 text-[var(--white)] text-sm font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
-              >
-                Ver detalles
-              </button>
-            </div>
-          </div>
-        </div>
+      <!-- Bottom CTA -->
+      <div class="srv-bottom-cta srv-anim-5">
+        <p class="srv-cta-text">
+          ¿Tienes dudas sobre cuál es el servicio ideal para ti?
+        </p>
+        <a href="/#contact" class="srv-btn-consulta">Consulta gratuita</a>
       </div>
 
-      <!-- CTA Section -->
-      <div class="mt-16 md:mt-20 text-center">
-        <div
-          class="rounded-[32px] p-8 md:p-12 max-w-3xl mx-auto cta-card"
-          style="background: linear-gradient(135deg, var(--bento-pink-light), var(--bento-pink));"
-        >
-          <div class="text-5xl mb-6">✨</div>
-          <h2
-            class="text-3xl md:text-4xl font-semibold mb-4 text-[var(--white)]"
-          >
-            ¿Lista para tu transformación?
-          </h2>
-          <p class="text-[var(--white-icon)] mb-8 text-base md:text-lg">
-            Reserva tu momento de bienestar y déjate mimar por expertas
-          </p>
-          <a
-            href="/#contact"
-            class="inline-block px-8 py-4 rounded-full font-semibold text-base transition-all hover:shadow-2xl transform hover:-translate-y-1"
-            style="background-color: var(--sec); color: var(--white);"
-          >
-            Agendar mi cita
-          </a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -589,99 +42,730 @@ import Footer from "../components/footer.astro";
 </Layout>
 
 <style>
-  .service-card {
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .service-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  }
-
-  .service-card:hover .gradient-bg {
-    opacity: 0.95;
-  }
-
-  .service-card:hover .glass-corner {
-    opacity: 0.35;
-  }
-
-  .service-card.expanded {
-    grid-column: span 1;
-  }
-
-  @media (min-width: 1024px) {
-    .service-card.expanded {
-      grid-column: span 2;
+  /* ── ENTRANCE KEYFRAME ── */
+  @keyframes srvFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
-  .service-details {
+  .srv-anim-1,
+  .srv-anim-2,
+  .srv-anim-3,
+  .srv-anim-4,
+  .srv-anim-5 {
+    opacity: 0;
+    animation: srvFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .srv-anim-1 { animation-delay: 0.05s; }
+  .srv-anim-2 { animation-delay: 0.15s; }
+  .srv-anim-3 { animation-delay: 0.25s; }
+  .srv-anim-4 { animation-delay: 0.35s; }
+  .srv-anim-5 { animation-delay: 0.5s; }
+
+  /* ── PAGE SHELL ── */
+  .srv-page {
+    min-height: 100vh;
+    padding: 5.5rem 1rem 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .srv-page {
+      padding: 7rem 1.5rem 5rem;
+    }
+  }
+
+  .srv-container {
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .srv-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .srv-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .srv-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .srv-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 34rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── BOTTOM CTA ── */
+  .srv-bottom-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .srv-cta-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .srv-btn-consulta {
+    display: inline-block;
+    padding: 0.65rem 2rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 2px solid var(--primary-dark);
+    color: var(--primary-dark);
+    text-decoration: none;
     transition:
-      max-height 0.5s ease,
-      opacity 0.5s ease,
-      margin-top 0.5s ease;
+      background 0.2s,
+      color 0.2s;
   }
 
-  .service-card.expanded .service-details {
-    max-height: 1000px !important;
-    opacity: 1 !important;
-    margin-top: 1rem;
-  }
-
-  .details-btn {
-    transition: opacity 0.3s ease;
-  }
-
-  .service-card.expanded .details-btn {
-    display: none;
-  }
-
-  .cta-card {
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .cta-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 25px 50px rgba(255, 182, 209, 0.3);
-  }
-
-  p {
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+  .srv-btn-consulta:hover {
+    background: var(--primary-dark);
+    color: #fff;
   }
 </style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const serviceCards = document.querySelectorAll(".service-card");
+<!-- Global styles for the React component (srv-card and children) -->
+<style is:global>
+  /* ── CARD WRAPPER ── */
+  .srv-card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 2rem;
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.07),
+      0 1px 4px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+  }
 
-    serviceCards.forEach((card) => {
-      const btn = card.querySelector(".details-btn");
+  /* ── TAB NAVIGATION WRAPPER ── */
+  .srv-tab-nav {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.4);
+  }
 
-      btn?.addEventListener("click", (e) => {
-        e.stopPropagation();
+  /* Scroll arrow buttons */
+  .srv-scroll-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, background 0.2s;
+    z-index: 2;
+  }
 
-        // Cerrar otras cards
-        serviceCards.forEach((otherCard) => {
-          if (otherCard !== card && otherCard.classList.contains("expanded")) {
-            otherCard.classList.remove("expanded");
-          }
-        });
+  .srv-scroll-btn--visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-        // Toggle actual
-        card.classList.toggle("expanded");
+  .srv-scroll-btn:hover {
+    background: rgba(250, 151, 172, 0.12);
+    color: var(--primary-dark);
+  }
 
-        // Scroll suave a la card expandida
-        if (card.classList.contains("expanded")) {
-          setTimeout(() => {
-            card.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          }, 100);
-        }
-      });
-    });
-  });
-</script>
+  /* Fade edge overlays when arrows are visible */
+  .srv-tab-nav::before,
+  .srv-tab-nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2.5rem;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.2s;
+    opacity: 0;
+  }
+
+  .srv-tab-nav::before {
+    left: 2.25rem;
+    background: linear-gradient(to right, rgba(255,255,255,0.7), transparent);
+  }
+
+  .srv-tab-nav::after {
+    right: 2.25rem;
+    background: linear-gradient(to left, rgba(255,255,255,0.7), transparent);
+  }
+
+  /* Show fade when the respective arrow is visible */
+  .srv-tab-nav:has(.srv-scroll-btn--left.srv-scroll-btn--visible)::before {
+    opacity: 1;
+  }
+
+  .srv-tab-nav:has(.srv-scroll-btn--right.srv-scroll-btn--visible)::after {
+    opacity: 1;
+  }
+
+  /* ── TAB RAIL ── */
+  .srv-tab-rail {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+    flex: 1;
+    min-width: 0;
+    padding: 0 0.25rem;
+  }
+
+  .srv-tab-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .srv-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    /* Minimum 48px touch target */
+    min-height: 3.5rem;
+    padding: 0.6rem 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2.5px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  @media (max-width: 480px) {
+    .srv-tab {
+      /* Wider tappable area on small screens */
+      min-width: 5rem;
+      padding: 0.65rem 0.75rem;
+    }
+  }
+
+  .srv-tab:hover {
+    background: rgba(250, 151, 172, 0.08);
+  }
+
+  .srv-tab--active {
+    border-bottom-color: var(--primary-dark);
+    background: rgba(250, 151, 172, 0.1);
+  }
+
+  @keyframes srvTabPop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.22) rotate(-4deg); }
+    70%  { transform: scale(0.95) rotate(2deg); }
+    100% { transform: scale(1.08) rotate(0deg); }
+  }
+
+  .srv-tab-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  @media (max-width: 480px) {
+    .srv-tab-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+
+  .srv-tab--active .srv-tab-icon {
+    opacity: 1;
+    animation: srvTabPop 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .srv-tab-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  @media (max-width: 480px) {
+    .srv-tab-label {
+      font-size: 0.68rem;
+    }
+  }
+
+  .srv-tab--active .srv-tab-label {
+    color: var(--primary-dark);
+  }
+
+  /* ── PANEL TRANSITIONS ── */
+  @keyframes srvPanelIn {
+    from {
+      opacity: 0;
+      transform: translateY(0.6rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes srvItemIn {
+    from {
+      opacity: 0;
+      transform: translateY(0.5rem) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .srv-panel {
+    padding: 2rem 1.5rem;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  @media (min-width: 640px) {
+    .srv-panel {
+      padding: 2.5rem 2.5rem;
+    }
+  }
+
+  .srv-panel--in {
+    animation: srvPanelIn 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .srv-panel--out {
+    opacity: 0;
+    transform: translateY(-0.4rem);
+  }
+
+  /* ── PANEL HEADER ── */
+  .srv-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .srv-panel-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+  }
+
+  .srv-panel-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .srv-panel-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.15;
+    margin: 0 0 0.2rem;
+  }
+
+  .srv-panel-tagline {
+    font-size: 0.82rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Desde badge */
+  .srv-panel-desde {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    border-radius: 1rem;
+    padding: 0.6rem 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .srv-desde-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-dark);
+    line-height: 1;
+  }
+
+  .srv-desde-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  /* Description */
+  .srv-panel-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+  }
+
+  /* Separator */
+  .srv-separator {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.1),
+      transparent
+    );
+    margin-bottom: 1.5rem;
+  }
+
+  /* Service count + hint */
+  .srv-items-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .srv-items-count {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+  }
+
+  .srv-items-hint {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+  /* ── ITEMS GRID ── */
+  .srv-items-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+
+  @media (min-width: 560px) {
+    .srv-items-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .srv-item {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 1rem;
+    overflow: hidden;
+    opacity: 0;
+    animation: srvItemIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transition:
+      background 0.2s,
+      box-shadow 0.2s,
+      border-color 0.2s;
+  }
+
+  .srv-item:hover {
+    background: rgba(250, 151, 172, 0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  .srv-item--open {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  }
+
+  /* Accordion header button */
+  .srv-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    min-height: 3rem;
+    transition: background 0.15s;
+  }
+
+  .srv-item-header:hover {
+    background: rgba(250, 151, 172, 0.07);
+  }
+
+  .srv-item--open .srv-item-header {
+    background: rgba(250, 151, 172, 0.08);
+  }
+
+  .srv-item-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .srv-item-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  /* Chevron */
+  .srv-item-chevron {
+    color: var(--text-muted);
+    opacity: 0.5;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s;
+    flex-shrink: 0;
+  }
+
+  .srv-item--open .srv-item-chevron,
+  .srv-item-chevron--open {
+    transform: rotate(180deg);
+    opacity: 0.8;
+  }
+
+  /* Collapsible body — grid-template-rows trick (smooth, no JS heights) */
+  .srv-item-collapsible {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .srv-item-collapsible--open {
+    grid-template-rows: 1fr;
+  }
+
+  .srv-item-collapsible-inner {
+    overflow: hidden;
+    padding: 0 0.9rem;
+    transition: padding 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .srv-item-collapsible--open .srv-item-collapsible-inner {
+    padding: 0.1rem 0.9rem 0.8rem;
+  }
+
+  .srv-item-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--primary-dark);
+    flex-shrink: 0;
+  }
+
+  .srv-item-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .srv-item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.2rem;
+  }
+
+  .srv-item-nombre {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  /* Recommended badge */
+  .srv-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    border-radius: 9999px;
+    padding: 0.15rem 0.5rem 0.15rem 0.35rem;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  /* Highlighted border on recommended items */
+  .srv-item--recommended {
+    border-color: rgba(232, 117, 140, 0.28);
+    background: rgba(255, 212, 229, 0.2);
+  }
+
+  .srv-item--recommended:hover {
+    border-color: rgba(232, 117, 140, 0.45);
+    background: rgba(255, 212, 229, 0.3);
+  }
+
+  /* Decoration disclaimer note */
+  .srv-nota-decoraciones {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.5;
+    margin: -0.5rem 0 1.25rem;
+    opacity: 0.75;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  /* Price variation note */
+  .srv-nota-precios {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0 0 1.25rem;
+    padding: 0.55rem 0.8rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-left: 2px solid rgba(232, 117, 140, 0.35);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .srv-item-precio {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    white-space: nowrap;
+  }
+
+  .srv-item-nota {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .srv-item-desc {
+    font-size: 0.775rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0 0 0.5rem;
+  }
+
+  /* Info chips */
+  .srv-item-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .srv-chip {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 9999px;
+    padding: 0.15rem 0.55rem;
+    line-height: 1.5;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .srv-item:hover .srv-chip {
+    background: rgba(232, 117, 140, 0.08);
+    border-color: rgba(232, 117, 140, 0.2);
+  }
+
+  .srv-item--recommended .srv-chip {
+    background: rgba(255, 212, 229, 0.4);
+    border-color: rgba(232, 117, 140, 0.18);
+  }
+
+  /* ── PANEL CTA ── */
+  .srv-panel-cta {
+    display: flex;
+    justify-content: center;
+  }
+
+  .srv-btn-reservar {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border-radius: 9999px;
+    background: var(--primary-dark);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s,
+      background 0.2s;
+    box-shadow: 0 4px 18px rgba(250, 151, 172, 0.35);
+  }
+
+  .srv-btn-reservar:hover {
+    transform: translateY(-2px);
+    background: var(--pink-darker);
+    box-shadow: 0 6px 24px rgba(250, 151, 172, 0.5);
+  }
+</style>
+
