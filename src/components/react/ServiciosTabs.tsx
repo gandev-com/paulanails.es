@@ -33,38 +33,47 @@ const servicios: Servicio[] = [
         nombre: "Manicura Clásica",
         desc: "Limado, cutículas y esmaltado tradicional con acabado perfecto",
         precio: 12,
-        info: ["Uña natural", "Uña corta", "Mantenimiento básico"],
+        info: ["Uña natural", "Uña corta", "Mantenimiento básico", "2-3 dias"],
       },
       {
         nombre: "Semipermanente",
         desc: "Esmaltado de larga duración sin dañar la uña natural",
-        precio: 22,
+        precio: 20,
+        recomendado: true,
+        info: ["Uña natural", "Dura 3–4 semanas", "Sin daño"],
+      },
+       {
+        nombre: "Semipermanente Base Ruber o con endurecedor",
+        desc: "Limpieza + una capa de ruber para fortalecer uñas débiles o con tendencia a romperse, más esmaltado semipermanente encima para un acabado duradero y resistente",
+        precio: 25,
         recomendado: true,
         info: ["Uña natural", "Dura 3–4 semanas", "Sin daño"],
       },
       {
-        nombre: "Uñas de Gel",
-        desc: "Estructura duradera, brillo natural y acabado impecable",
-        precio: 30,
+        nombre: "Uñas  de Gel",
+        desc: "Estructura duradera, flexibilidad, brillo natural y acabado impecable ",
+        precio: 60,
         recomendado: true,
+        nota: "Doble color desde 80€",
         info: ["Uña natural o débil", "Con o sin extensión", "Dura 4–5 semanas"],
       },
       {
         nombre: "Uñas Acrílicas",
         desc: "Extensiones y reconstrucción para el largo que siempre quisiste",
-        precio: 35,
-        info: ["Uña corta o mordida", "Extensión de largo", "Alta resistencia"],
+        precio: 50,
+        info: ["Uña corta o mordida", "Extensión de largo", "Alta resistencia", "2-3 semanas"],
       },
-      {
-        nombre: "Francesa",
-        desc: "El clásico intemporal en cualquier longitud o forma",
-        precio: 15,
-        info: ["Cualquier tipo de uña", "Look natural", "Clásico atemporal"],
+       {
+        nombre: "Tips ",
+        desc: "Extensiones de uñas con tips para un largo y forma personalizados",
+        precio: 35,
+        nota: "plástico, de porcelana o de gel",
+        info: ["Daña la uña natural", "Extensión de largo", "Forma personalizada"],
       },
       {
         nombre: "Nail Art",
         desc: "Diseños personalizados, gemas y decoración exclusiva",
-        precio: 8,
+        precio: 1,
         nota: "desde",
         info: ["Sobre cualquier base", "Precio según diseño"],
       },
@@ -81,41 +90,41 @@ const servicios: Servicio[] = [
     items: [
       {
         nombre: "Pedicura Express",
-        desc: "Puesta a punto rápida: limado y color",
-        precio: 12,
+        desc: "Recorte de uñas y tratamiento de pureza para un cuidado rápido. Suavizado y eliminación profesional de durezas.",
+        precio: 14,
         info: ["Mantenimiento rápido", "Sin tratamiento profundo"],
       },
       {
-        nombre: "Pedicura Clásica",
-        desc: "Limpieza completa, cutículas, limado y esmaltado a elegir",
-        precio: 18,
-        info: ["Pies sanos", "Cuidado completo", "Con o sin color"],
+        nombre: "Pedicura Clásica con remojo",
+        desc: "Cuidado completo con remojo, peeling y hidratación, ideal para pies sanos",
+        precio: 25,
+        info: ["Pies sanos", "Cuidado completo", "Durezas tratadas"],
       },
-      {
-        nombre: "Semipermanente en Pies",
-        desc: "Color de larga duración sin manchas ni descascarillado",
-        precio: 22,
-        info: ["Uña del pie natural", "Dura 4–5 semanas", "Resistente al agua"],
-      },
+     
       {
         nombre: "Pedicura Spa",
         desc: "Ritual completo con exfoliación e hidratación profunda",
-        precio: 28,
+        precio: 35,
         recomendado: true,
         info: ["Pies secos o cansados", "Ritual completo de bienestar"],
       },
-      {
-        nombre: "Tratamiento Callosidades",
-        desc: "Suavizado y eliminación profesional de durezas",
-        precio: 15,
-        recomendado: true,
-        info: ["Pies con durezas", "Talones agrietados", "Zona plantar"],
+       {
+        nombre: "Esmaltado Clásico",
+        desc: "Esmaltado tradicional de larga duración sin dañar la uña natural, ideal para pies sanos que buscan un acabado duradero y resistente",
+        precio: 14,
+        info: ["Pies sanos", "Dura 2-3 dias", "Sin daño"],
       },
+      {
+        nombre: "Semipermanente",
+        desc: "Esmaltado semipermanente para un acabado duradero y resistente, ideal para pies que necesitan un cuidado rápido pero con resultados que duren",
+        precio: 20,
+        info: ["Pies sanos", "Esmaltado duradero", "Sin daño"],
+      },
+     
       {
         nombre: "Diseños para Pies",
         desc: "Nail art decorativo adaptado a la uña del pie",
-        precio: 8,
-        nota: "desde",
+        precio: 1,
         info: ["Sobre cualquier base", "Precio según diseño"],
       },
     ],
@@ -125,7 +134,7 @@ const servicios: Servicio[] = [
     nombre: "Masajes",
     tagline: "Equilibrio para cuerpo y mente",
     descripcion:
-      "Libera tensiones, reconecta contigo. Terapias manuales adaptadas a lo que tu cuerpo necesita hoy.",
+      "Libera tensiones, reconecta contigo. Terapias manuales adaptadas a lo que tu cuerpo necesita hoy. NO DISPONIBLE ACTUALMENTE.",
     icono: "/svg/terapias.svg",
     items: [
       {
@@ -263,49 +272,88 @@ const servicios: Servicio[] = [
   },
   {
     id: "terapias",
-    nombre: "Terapias",
+    nombre: "Tratamientos",
     tagline: "Rituales para tu piel y alma",
     descripcion:
       "Tratamientos faciales y corporales que despiertan tu luminosidad natural. Porque cuidarte es un acto de amor.",
     icono: "/svg/terapias.svg",
     items: [
+      // {
+      //   nombre: "Limpieza Facial Profunda",
+      //   desc: "Extracción, purificación y brillo inmediato renovado",
+      //   precio: 30,
+      //   recomendado: true,
+      //   info: ["Piel mixta u oleosa", "Puntos negros", "1ª visita ideal"],
+      // },
+      // {
+      //   nombre: "Hidratación Intensiva",
+      //   desc: "Nutrición activa para pieles secas, opacas o sensibles",
+      //   precio: 35,
+      //   info: ["Piel seca o sensible", "Pérdida de luminosidad", "Apto embarazadas"],
+      // },
+      // {
+      //   nombre: "Aromaterapia",
+      //   desc: "Ritual sensorial con aceites esenciales 100% naturales",
+      //   precio: 40,
+      //   info: ["Estrés y agotamiento", "Todo tipo de piel", "Experiencia sensorial"],
+      // },
+      // {
+      //   nombre: "Peeling Químico",
+      //   desc: "Renovación celular y unificación del tono de piel",
+      //   precio: 40,
+      //   info: ["Manchas o tono irregular", "No apto: piel muy sensible", "Evitar sol 48h"],
+      // },
+      // {
+      //   nombre: "Tratamiento Anti-edad",
+      //   desc: "Firmeza, volumen y rejuvenecimiento visible desde la primera sesión",
+      //   precio: 50,
+      //   info: ["Piel madura", "Pérdida de firmeza", "Arrugas finas"],
+      // },
+      // {
+      //   nombre: "Ritual Corporal",
+      //   desc: "Exfoliación + envoltura nutritiva + hidratación completa",
+      //   precio: 55,
+      //   info: ["Piel seca o deshidratada", "Cuerpo completo", "Experiencia premium"],
+      // },
+       {
+        nombre: "Uñas mordidas",
+         desc: "Tratamiento especializado para uñas dañadas o mordidas",
+         precio: 35,
+         recomendado: true,
+         info: ["Uñas dañadas", "Mordidas", "1ª visita ideal"],
+       },
+       {
+        nombre: "Reconstruccion de uñas pies",
+        desc: "Reconstrucción y fortalecimiento para uñas débiles o dañadas",
+        precio: 9,
+        nota: "por uña",
+        info: ["Uñas débiles o dañadas", "Fortalecimiento", "Resultados visibles en 2-3 sesiones"],
+       },
       {
-        nombre: "Limpieza Facial Profunda",
-        desc: "Extracción, purificación y brillo inmediato renovado",
-        precio: 30,
-        recomendado: true,
-        info: ["Piel mixta u oleosa", "Puntos negros", "1ª visita ideal"],
+        nombre: "Parafina Proximamente",
+        desc: "Tratamiento de parafina caliente para manos o pies, ideal para pieles secas o con problemas de circulación",
+        precio: 0,
+        info: ["Piel seca o con mala circulación", "Manos o pies", "Efecto hidratante y relajante"],
       },
       {
-        nombre: "Hidratación Intensiva",
-        desc: "Nutrición activa para pieles secas, opacas o sensibles",
-        precio: 35,
-        info: ["Piel seca o sensible", "Pérdida de luminosidad", "Apto embarazadas"],
+        nombre: "Presoterapia Proximamente",
+        desc: "Terapia de compresión para mejorar la circulación y reducir la retención de líquidos, ideal para piernas cansadas o con tendencia a la hinchazón",
+        precio: 0, 
+        info: ["Piernas cansadas o con retención de líquidos", "Mejora circulación", "Efecto drenante"]
       },
-      {
-        nombre: "Aromaterapia",
-        desc: "Ritual sensorial con aceites esenciales 100% naturales",
-        precio: 40,
-        info: ["Estrés y agotamiento", "Todo tipo de piel", "Experiencia sensorial"],
+     {
+        nombre: "Microblading",
+        desc: "Técnica de maquillaje semipermanente para cejas, ideal para definir, rellenar o corregir la forma de las cejas con resultados naturales y duraderos",
+        precio: 300,
+        info: ["Cejas finas o irregulares", "Resultados naturales", "Duración 1-2 años"]
+     },
+     {
+        nombre: "Peeling Corporal Proximamente",
+        desc: "Exfoliación química para el cuerpo, ideal para mejorar la textura de la piel, reducir manchas o tratar problemas como la foliculitis con resultados visibles en pocas sesiones",
+        precio: 0,
+        info: ["Mejora textura corporal", "Reduce manchas y foliculitis", "Resultados visibles en 2-3 sesiones"]
       },
-      {
-        nombre: "Peeling Químico",
-        desc: "Renovación celular y unificación del tono de piel",
-        precio: 40,
-        info: ["Manchas o tono irregular", "No apto: piel muy sensible", "Evitar sol 48h"],
-      },
-      {
-        nombre: "Tratamiento Anti-edad",
-        desc: "Firmeza, volumen y rejuvenecimiento visible desde la primera sesión",
-        precio: 50,
-        info: ["Piel madura", "Pérdida de firmeza", "Arrugas finas"],
-      },
-      {
-        nombre: "Ritual Corporal",
-        desc: "Exfoliación + envoltura nutritiva + hidratación completa",
-        precio: 55,
-        info: ["Piel seca o deshidratada", "Cuerpo completo", "Experiencia premium"],
-      },
+
     ],
   },
 ];
@@ -322,7 +370,7 @@ export default function ServiciosTabs() {
   const railRef = useRef<HTMLDivElement>(null);
 
   const active = servicios[displayTab];
-  const minPrice = Math.min(...active.items.map((i) => i.precio));
+  const minPrice = Math.min(...active.items.map((i) => i.precio && i.precio > 1 ? i.precio : Infinity));
 
   const checkScroll = useCallback(() => {
     const rail = railRef.current;
